@@ -26,13 +26,13 @@ const NavBar = () => {
                     </Link>
                 </div>
                 <div className='hidden md:flex space-x-6'>
-                    <Link to="#" className='text-700 hover:text-black text-sm font-medium'>
+                    <Link to="#" className='text-700 hover:text-black text-md font-medium'>
                         Digital Cameras
                     </Link>
-                    <Link to="#" className='text-700 hover:text-black text-sm font-medium'>
+                    <Link to="#" className='text-700 hover:text-black text-md font-medium'>
                         Film Cameras
                     </Link>
-                    <Link to="#" className='text-700 hover:text-black text-sm font-medium'>
+                    <Link to="#" className='text-700 hover:text-black text-md font-medium'>
                         Lenses
                     </Link>
                 </div>
