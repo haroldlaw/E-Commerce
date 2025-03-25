@@ -6,6 +6,7 @@ import { Toaster } from 'sonner'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Profile from './pages/Profile'
+import Product from './pages/Product'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="products/:product" element={<Product />} />
         </Route>
       </Routes>
     </BrowserRouter>

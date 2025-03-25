@@ -10,7 +10,8 @@ const Order = () => {
                 createdAt: new Date(),
                 shippingAddress: { city: "Galway", country: "Ireland" },
                 items: [{
-                    name: "Lenses"
+                    name: "Lenses",
+                    image: "https://picsum.photos/500/500?random=1"
                 }],
                 price: 100,
                 isPaid: true
@@ -28,6 +29,7 @@ const Order = () => {
                 <table className='min-w-full text-left text-gray-500'>
                     <thead className='bg-gray-100 text-xs uppercase text-gray-700'>
                         <tr>
+                            <th className="py-2 px-4 sm:py-3">Item</th>
                             <th className="py-2 px-4 sm:py-3">Order ID</th>
                             <th className="py-2 px-4 sm:py-3">Order Placed</th>
                             <th className="py-2 px-4 sm:py-3">Shipping Address</th>
@@ -43,6 +45,10 @@ const Order = () => {
                                     key={order.id}
                                     className="border-b hover:border-gray-50 cursor-pointer"
                                 >
+                                    <td className="py-2 px-2 sm:py-4 sm:px-4">
+                                        <img src={order.items[0].image} alt={order.items[0].name}
+                                        className='w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-lg'/>
+                                    </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4 font-medium text-gray-900 whitespace-nowrap">
                                         {order.id}
                                     </td>
@@ -64,8 +70,8 @@ const Order = () => {
                                     <td className="py-2 px-2 sm:py-4 sm:px-4">
                                         <span
                                             className={`${order.isPaid
-                                                    ? "bg-green-100 text-green-700"
-                                                    : "bg-red-100 text-red-700"
+                                                ? "bg-green-100 text-green-700"
+                                                : "bg-red-100 text-red-700"
                                                 } px-2 py-1 rounded-full text-xs sm:text-sm font-medium `}
                                         >
                                             {order.isPaid ? "Paid" : "Pending"}

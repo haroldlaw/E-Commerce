@@ -26,7 +26,7 @@ const NavBar = () => {
                     </Link>
                 </div>
                 <div className='hidden md:flex space-x-6'>
-                    <Link to="#" className='text-700 hover:text-black text-md font-medium'>
+                    <Link to="/products/all" className='text-700 hover:text-black text-md font-medium'>
                         Digital Cameras
                     </Link>
                     <Link to="#" className='text-700 hover:text-black text-md font-medium'>
