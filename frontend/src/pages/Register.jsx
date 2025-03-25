@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Login = () => {
+const Register = () => {
+    const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("User Login:", {email, password})
+        console.log("User Registered:",{name, email, password})
     };
 
     return (
@@ -18,8 +19,18 @@ const Login = () => {
                         <h2 className="text-xl font-medium">ShootItWithFilm</h2>
                     </div>
                     <p className="text-center mb-6">
-                        Please enter your email and password to login
+                        Set up your name, email and password to sign up
                     </p>
+                    <div className="mb-4">
+                        <label className="block text-sm font-semibold mb-2">Name</label>
+                        <input
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="w-full p-2 border rounded"
+                            placeholder="Enter your name"
+                        />
+                    </div>
                     <div className="mb-4">
                         <label className="block text-sm font-semibold mb-2">Email</label>
                         <input
@@ -44,15 +55,15 @@ const Login = () => {
                         type="submit"
                         className="w-full bg-black text-white p-2 rounded-lg font-semibold hover:bg-gray-800 transition"
                     >
-                        Sign In
+                        Sign Up
                     </button>
                     <p className="mt-6 text-center text-sm">
-                        Don't have an account?{" "}
+                        Already have an account?{" "}
                         <Link
-                            to="/register"
+                            to="/login"
                             className="text-blue-500"
                         >
-                            Register
+                            Login
                         </Link>
                     </p>
                 </form>
@@ -61,4 +72,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register
