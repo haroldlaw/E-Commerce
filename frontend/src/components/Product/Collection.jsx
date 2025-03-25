@@ -23,7 +23,7 @@ const Collection = () => {
                             to="/collections/all?digital"
                             className="text-gray-900 underline"
                         >
-                            Shop Now
+                            Shop
                         </Link>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ const Collection = () => {
                             to="/collections/all?film"
                             className="text-gray-900 underline"
                         >
-                            Shop Now
+                            Shop
                         </Link>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ const Collection = () => {
                             to="/collections/all?lenses"
                             className="text-gray-900 underline"
                         >
-                            Shop Now
+                            Shop
                         </Link>
                     </div>
                 </div>
