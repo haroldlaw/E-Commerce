@@ -5,7 +5,6 @@ import Filter from '../components/Product/Filter'
 import Sort from '../components/Product/Sort'
 import ProductGrid from '../components/Product/ProductGrid'
 
-
 const Product = () => {
     const [products, setProducts] = useState([])
     const filterRef = useRef(null)
