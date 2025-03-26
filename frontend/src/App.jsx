@@ -9,6 +9,7 @@ import Profile from './pages/Profile'
 import Product from './pages/Product'
 import ProductDetails from './components/Product/ProductDetails'
 import Checkout from './components/Cart/Checkout'
+import OrderConfirmation from './pages/orderConfirmation'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="products/:product" element={<Product />} />
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path="orderConfirmation" element={<OrderConfirmation />} />
         </Route>
       </Routes>
     </BrowserRouter>
