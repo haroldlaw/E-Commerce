@@ -12,6 +12,7 @@ import Checkout from './components/Cart/Checkout'
 import OrderConfirmation from './pages/orderConfirmation'
 import OrderDetails from './pages/OrderDetails'
 import Order from './pages/Order'
+import AdminLayout from './components/Admin/AdminLayout'
 
 const App = () => {
   return (
@@ -28,8 +29,9 @@ const App = () => {
           <Route path="checkout" element={<Checkout />} />
           <Route path="orderConfirmation" element={<OrderConfirmation />} />
           <Route path="order/:id" element={<OrderDetails />} />
-          <Route path="order" element={<Order/>} />
+          <Route path="order" element={<Order />} />
         </Route>
+        <Route path="/admin" element={<AdminLayout />} />
       </Routes>
     </BrowserRouter>
   )

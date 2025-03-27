@@ -10,7 +10,7 @@ const Profile = () => {
                     <h1 className='text-2xl md:text-3xl font-bold mb-4'>
                         Harold Law
                     </h1>
-                    <p className='text-lg text-gray-600 mb-4'>hrdl20022gmail.com</p>
+                    <p className='text-lg text-gray-600 mb-4'>hrdl2002@gmail.com</p>
                     <button className='w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-500'>
                         Logout
                     </button>
