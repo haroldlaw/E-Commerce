@@ -17,6 +17,7 @@ import AdminHomePage from './pages/AdminHomePage'
 import UserManagement from './components/Admin/UserManagement'
 import ProductManagement from './components/Admin/ProductManagement'
 import EditProduct from './components/Admin/EditProduct'
+import OrderManagement from './components/Admin/OrderManagement'
 
 const App = () => {
   return (
@@ -39,7 +40,8 @@ const App = () => {
           <Route index element={<AdminHomePage />} />
           <Route path="user" element={<UserManagement />} />
           <Route path="product" element={<ProductManagement />} />
-          <Route path="product/:id/edit" element={<EditProduct/>} />
+          <Route path="product/:id/edit" element={<EditProduct />} />
+          <Route path="order" element={<OrderManagement />} />
         </Route>
       </Routes>
     </BrowserRouter>
