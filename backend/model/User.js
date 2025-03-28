@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
         default: "customer"
     }
 },
-    { timestamp: true })
+    { timestamps: true })
 
 
 // hash password
