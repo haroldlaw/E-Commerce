@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema({
     discountPrice: {
         type: Number,
     },
-    countInStick: {
+    countInStock: {
         type: Number,
         required: true,
         default: 0
@@ -52,11 +52,11 @@ const productSchema = new mongoose.Schema({
         }
     }],
     isFeatured: {
-        type: boolean,
+        type: Boolean,
         default: false
     },
     isPublised: {
-        type: boolean,
+        type: Boolean,
         deafault: false
     },
     rating: {
@@ -67,7 +67,6 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
-    tags: [String],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
@@ -81,11 +80,6 @@ const productSchema = new mongoose.Schema({
     },
     metaKeywords: {
         type: String,
-    },
-    dimensions: {
-        length: Number,
-        width: Number,
-        height: Number,
     },
     weight: Number,
 },
