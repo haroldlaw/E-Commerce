@@ -197,5 +197,16 @@ router.get("/", async (req, res) => {
 })
 
 // route to get single product
+router.get("/:id", async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        if (product) {
+            res.json(product);
+        } else {
+            console.error(error);
+            res.status(500).send("Server Error");
+        }
+    } catch (error) { }
+})
 
 module.exports = router
