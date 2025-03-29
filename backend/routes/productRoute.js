@@ -123,4 +123,79 @@ router.delete("/:id", protect, admin, async (req, res) => {
     }
 })
 
+// route to get products
+router.get("/", async (req, res) => {
+    try {
+        const {
+            collection,
+            colour,
+            minPrice,
+            maxPrice,
+            sortBy,
+            search,
+            category,
+            brand,
+            limit,
+        } = req.query
+
+        let query = {}
+
+        //  Filter logic
+        if (collection && collection.toLocaleLowerCase() !== "all") {
+            query.collection = collection;
+        }
+
+        if (category && category.toLocaleLowerCase() !== "all") {
+            query.category = category;
+        }
+
+        if (brand) {
+            query.brand = { $in: brand.split(",") };
+        }
+
+        if (colour) {
+            query.colours = { $in: [colour] };
+        }
+
+        if (minPrice || maxPrice) {
+            query.price = {};
+            if (minPrice) query.price.$gte = Number(minPrice);
+            if (maxPrice) query.price.$lte = Number(maxPrice);
+        }
+
+        if (search) {
+            query.$or = [
+                { name: { $regex: search, $options: "i" } },
+                { description: { $regex: search, $options: "i" } },
+            ];
+        }
+
+        // Sort Logic
+        let sort = {};
+        if (sortBy) {
+            switch (sortBy) {
+                case "priceAsc":
+                    sort = { price: 1 };
+                    break;
+                case "priceDesc":
+                    sort = { price: -1 };
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // Fetch products and apply sorting and limit
+        let products = await Product.find(query)
+            .sort(sort)
+            .limit(Number(limit) || 0);
+        res.json(products);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("server Error");
+    }
+})
+
+// route to get single product
+
 module.exports = router
