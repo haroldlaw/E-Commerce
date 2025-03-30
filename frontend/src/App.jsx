@@ -9,7 +9,6 @@ import Profile from './pages/Profile'
 import Product from './pages/Product'
 import ProductDetails from './components/Product/ProductDetails'
 import Checkout from './components/Cart/Checkout'
-import OrderConfirmation from './pages/orderConfirmation'
 import OrderDetails from './pages/OrderDetails'
 import Order from './pages/Order'
 import AdminLayout from './components/Admin/AdminLayout'
@@ -18,6 +17,7 @@ import UserManagement from './components/Admin/UserManagement'
 import ProductManagement from './components/Admin/ProductManagement'
 import EditProduct from './components/Admin/EditProduct'
 import OrderManagement from './components/Admin/OrderManagement'
+import OrderConfirmation from './pages/OrderConfirmation'
 
 const App = () => {
   return (

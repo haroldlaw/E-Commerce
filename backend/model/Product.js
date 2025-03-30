@@ -27,16 +27,8 @@ const productSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    category: {
-        type: String,
-        required: true
-    },
     brand: {
         type: String,
-    },
-    colours: {
-        type: [String],
-        required: true
     },
     collection: {
         type: String,
@@ -81,7 +73,6 @@ const productSchema = new mongoose.Schema({
     metaKeywords: {
         type: String,
     },
-    weight: Number,
 },
     { timestamps: true }
 

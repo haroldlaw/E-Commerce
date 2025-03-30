@@ -27,12 +27,26 @@ const Product = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            const fetchedProducts = [{
-                id: 1,
-                name: "Product 1",
-                price: 100,
-                images: [{ url: "https://picsum.photos/500/500?random=1" }]
-            }]
+            const fetchedProducts = [
+                {
+                    id: 1,
+                    name: "Fujifilm X100V",
+                    price: 1500,
+                    images: [{ url: "https://www.mpb.com/media-service/1606dcec-3cf0-4ff3-a27e-d6742931e8b0" }]
+                },
+                {
+                    id: 2,
+                    name: "Contax T2",
+                    price: 1250,
+                    images: [{ url: "https://www.mpb.com/media-service/f3d3f357-1592-4c60-9e67-031926d0f7d2" }]
+                },
+                {
+                    id: 3,
+                    name: "Leica Q3",
+                    price: 5500,
+                    images: [{ url: "https://www.mpb.com/media-service/9929caa3-18e7-4c5f-aebb-40607fc24376" }]
+                }
+            ]
             setProducts(fetchedProducts)
         }, 1000)
     })

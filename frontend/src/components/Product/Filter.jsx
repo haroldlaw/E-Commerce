@@ -16,7 +16,7 @@ const Filter = () => {
 
   const categories = ["Digital", "Film", "Lens"];
 
-  const brands = ["Sony", "Nikon", "Canon", "Fujifilm", "Olympus"];
+  const brands = ["Sony", "Nikon", "Canon", "Fujifilm", "Leica", "Ricoh"];
 
   useEffect(() => {
     const params = Object.fromEntries([...searchParams])

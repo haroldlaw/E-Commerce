@@ -10,12 +10,12 @@ const Order = () => {
             const mockOrder = [{
                 id: "001",
                 createdAt: new Date(),
-                shippingAddress: { city: "Galway", country: "Ireland" },
+                shippingAddress: { street:"52 Lios An Uisce", city: "Galway", country: "Ireland" },
                 items: [{
-                    name: "Lenses",
-                    image: "https://picsum.photos/500/500?random=1"
+                    name: "Fujifilm X100V",
+                    image: "https://www.mpb.com/media-service/1606dcec-3cf0-4ff3-a27e-d6742931e8b0"
                 }],
-                price: 100,
+                price: 1500,
                 isPaid: true
             }]
             setOrders(mockOrder)
@@ -65,7 +65,7 @@ const Order = () => {
                                     </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4 font-medium text-gray-900">
                                         {order.shippingAddress
-                                            ? `${order.shippingAddress.city}, ${order.shippingAddress.country}`
+                                            ? `${order.shippingAddress.street}, ${order.shippingAddress.city}, ${order.shippingAddress.country}`
                                             : "N/A"}
                                     </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4 font-medium text-gray-900 whitespace-nowrap">

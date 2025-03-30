@@ -5,19 +5,17 @@ const CartContent = () => {
   const cartProducts = [
     {
       productId: 1,
-      name: "FujiFilm XT30",
-      colour: "Silver",
+      name: "Sony Alpha A6700",
       quantity: 1,
-      price: 1000,
-      image: "https://picsum.photos/200?random=1"
+      price: 1500,
+      image: "https://www.mpb.com/media-service/341f363e-50bc-4ace-a059-5804cd2fa966"
     },
     {
       productId: 2,
-      name: "FujiFilm XM5",
-      colour: "Black",
+      name: "Sony Alpha A7C II",
       quantity: 1,
-      price: 900,
-      image: "https://picsum.photos/200?random=2"
+      price: 1900,
+      image: "https://www.mpb.com/media-service/59f7d773-5909-4ffa-9420-7565d4d57ba8"
     }
   ]
   return (
@@ -33,9 +31,6 @@ const CartContent = () => {
               />
               <div>
                 <h3>{product.name}</h3>
-                <p className='text-sm text-gray-500'>
-                  color: {product.colour}
-                </p>
                 <div className='flex items-center mt-2'>
                   <button className='border rounded px-2 py-1 text-xl font-medium'>-</button>
                   <span className='mx-4'>{product.quantity}</span>

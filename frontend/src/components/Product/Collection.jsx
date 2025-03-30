@@ -17,7 +17,7 @@ const Collection = () => {
                     />
                     <div className="absolute bottom-8 left-8 bg-white bg-opacity-90 p-4">
                         <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                            Digital Cameras
+                            Digital Camera
                         </h2>
                         <Link
                             to="/collections/all?digital"
@@ -36,7 +36,7 @@ const Collection = () => {
                     />
                     <div className="absolute bottom-8 left-8 bg-white bg-opacity-90 p-4">
                         <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                            Film Cameras
+                            Film Camera
                         </h2>
                         <Link
                             to="/collections/all?film"
@@ -55,7 +55,7 @@ const Collection = () => {
                     />
                     <div className="absolute bottom-8 left-8 bg-white bg-opacity-90 p-4">
                         <h2 className="text-2xl font-bold text-gray-900 mb-3">
-                            Lenses
+                            Lens
                         </h2>
                         <Link
                             to="/collections/all?lenses"

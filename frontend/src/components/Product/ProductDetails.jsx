@@ -6,7 +6,6 @@ const selectedProduct = {
     name: "Fujifilm X100V",
     price: 1500,
     description: "With the Fujifilm X100V, you'll enjoy photography in its purest form",
-    colors: ["Silver", "Black"],
     images: [{
         url: "https://picsum.photos/500/500?random=1",
         altText: "Fujifilm X100V"
@@ -15,7 +14,6 @@ const selectedProduct = {
 
 const ProductDetails = () => {
     const [mainImage, setMainImage] = useState("")
-    const [selectedColor, setSelectedColor] = useState("")
     const [quantity, setQuantity] = useState(1)
     const [isButtonDisabled, setIsButtonDisabled] = useState(false)
 
@@ -31,13 +29,6 @@ const ProductDetails = () => {
     };
 
     const handleAddToCart = () => {
-        if (!selectedColor) {
-            toast.error("Please select a colour before adding to cart", {
-                duration: 1000
-            })
-            return
-        }
-
         setIsButtonDisabled(true);
 
         setTimeout(() => {
@@ -93,27 +84,6 @@ const ProductDetails = () => {
                         <p className='text-gray-600 mb-4'>
                             {selectedProduct.description}
                         </p>
-                        <div className='mb-4'>
-                            <p className="text-gray-700">Colour:</p>
-                            <div className='flex gap-2 mt-2'>
-                                {selectedProduct.colors.map((color) => (
-                                    <button
-                                        key={color}
-                                        onClick={() => setSelectedColor(color)}
-                                        className={`w-8 h-8 rounded-full border ${selectedColor === color
-                                            ? "border-4 border-black"
-                                            : "border-gray-300"
-                                            }`}
-                                        style={{
-                                            backgroundColor: color.toLocaleLowerCase(),
-                                            filter: "brightness(0.5)",
-                                        }}
-                                    >
-
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
                         <div className='mb-6'>
                             <p className='text-gray-700'>Quantity:</p>
                             <div className='flex items-center space-x-4 mt-2'>

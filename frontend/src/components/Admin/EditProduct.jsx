@@ -7,9 +7,7 @@ const EditProduct = () => {
         price: 0,
         countInStock: 0,
         sku: "",
-        category: "",
         brand: "",
-        colours: [],
         collection: "",
         images: [{
             url: "https://picsum.photos/150?random=1"
@@ -95,25 +93,6 @@ const EditProduct = () => {
                         name="sku"
                         value={productDetail.sku}
                         onChange={handleChange}
-                        className="w-full border border-gray-300 rounded-md p-2"
-                    />
-                </div>
-
-                {/* Colour */}
-                <div className="mb-6">
-                    <label className="block font-semibold mb-2">
-                        Colour
-                    </label>
-                    <input
-                        type="text"
-                        name="colours"
-                        value={productDetail.colours.join(", ")}
-                        onChange={(e) =>
-                            setProductDetail({
-                                ...productDetail,
-                                colours: e.target.value.split(",").map((colour) => colour.trim()),
-                            })
-                        }
                         className="w-full border border-gray-300 rounded-md p-2"
                     />
                 </div>

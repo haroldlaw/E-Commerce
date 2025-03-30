@@ -16,10 +16,9 @@ const OrderDetails = () => {
             shippingAddress: { street: "52 Lios An Uisce", city: "Galway", country: "Ireland" },
             orderItems: [{
                 productId: 1,
-                name: "FujiFilm XT30",
-                quantity: 1,
-                price: 1000,
-                image: "https://picsum.photos/200?random=1"
+                name: "Fujifilm X100V",
+                quantity: 2,
+                price: 1500,
             }]
         }
         setOrderDetails(mockOrderDetails)
@@ -38,7 +37,7 @@ const OrderDetails = () => {
                             <h3 className="text-lg md:text-xl font-semibold">
                                 Order ID: {orderDetails.id}
                             </h3>
-                            <p className="text-gray-600">
+                            <p className="text-600">
                                 {new Date(orderDetails.createdAt).toLocaleDateString()}
                             </p>
                         </div>
@@ -79,7 +78,7 @@ const OrderDetails = () => {
                     {/* Product list */}
                     <div className="overflow-x-auto">
                         <h4 className="text-lg font-semibold mb-4">Orders</h4>
-                        <table className="min-w-full text-gray-600 mb-4">
+                        <table className="min-w-full text-600 mb-4">
                             <thead className="bg-gray-100">
                                 <tr>
                                     <th className="py-2 px-4">Item</th>

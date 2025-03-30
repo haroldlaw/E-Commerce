@@ -11,11 +11,11 @@ const AdminHomePage = () => {
         totalPrice: 1000,
         status: "Processing"
     },{
-        id: "001",
+        id: "002",
         user: {
-            name: "Harold"
+            name: "Darren"
         },
-        totalPrice: 1000,
+        totalPrice: 1500,
         status: "Processing"
     }]
 

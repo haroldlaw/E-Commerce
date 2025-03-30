@@ -27,13 +27,13 @@ const NavBar = () => {
                 </div>
                 <div className='hidden md:flex space-x-6'>
                     <Link to="/products/all" className='text-700 hover:text-black text-md font-medium'>
-                        Digital Cameras
+                        Digital Camera
                     </Link>
                     <Link to="#" className='text-700 hover:text-black text-md font-medium'>
-                        Film Cameras
+                        Film Camera
                     </Link>
                     <Link to="#" className='text-700 hover:text-black text-md font-medium'>
-                        Lenses
+                        Lens
                     </Link>
                 </div>
                 <div className='flex items-center space-x-4'>
@@ -67,13 +67,13 @@ const NavBar = () => {
                     <h2 className="text-xl font-semibold mb-4">Menu</h2>
                     <nav className='space-y-4'>
                         <Link to="#" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
-                            Digital Cameras
+                            Digital Camera
                         </Link>
                         <Link to="#" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
-                            Film Cameras
+                            Film Camera
                         </Link>
                         <Link to="#" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
-                            Lenses
+                            Lens
                         </Link>
                     </nav>
                 </div>

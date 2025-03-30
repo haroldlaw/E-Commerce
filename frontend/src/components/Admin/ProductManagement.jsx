@@ -26,7 +26,7 @@ const ProductManagement = () => {
                             <th className="py-3 px-4">Name</th>
                             <th className="py-3 px-4">Price</th>
                             <th className="py-3 px-4">SKU</th>
-                            <th className="py-3 px-4">Actions</th>
+                            <th className="py-3 px-4">Action</th>
                         </tr>
                     </thead>
                     <tbody>

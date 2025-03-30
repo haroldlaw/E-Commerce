@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { IoMdClose } from 'react-icons/io';
 import CartContent from '../Cart/CartContent';
 import { useNavigate } from 'react-router-dom';

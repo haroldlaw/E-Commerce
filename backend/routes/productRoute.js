@@ -13,14 +13,11 @@ router.post("/", protect, admin, async (req, res) => {
             price,
             discountPrice,
             countInStock,
-            category,
             brand,
-            colours,
             collection,
             images,
             isFeatured,
             isPublished,
-            weight,
             sku,
         } = req.body;
 
@@ -30,14 +27,11 @@ router.post("/", protect, admin, async (req, res) => {
             price,
             discountPrice,
             countInStock,
-            category,
             brand,
-            colours,
             collection,
             images,
             isFeatured,
             isPublished,
-            weight,
             sku,
             user: req.user.id, // Reference to the admin user who created it
         });
@@ -59,14 +53,11 @@ router.put("/:id", protect, admin, async (req, res) => {
             price,
             discountPrice,
             countInStock,
-            category,
             brand,
-            colours,
             collection,
             images,
             isFeatured,
             isPublished,
-            weight,
             sku
         } = req.body
 
@@ -80,16 +71,13 @@ router.put("/:id", protect, admin, async (req, res) => {
             product.price = price || product.price;
             product.discountPrice = discountPrice || product.discountPrice;
             product.countInStock = countInStock || product.countInStock;
-            product.category = category || product.category;
             product.brand = brand || product.brand;
-            product.colours = colours || product.colours;
             product.collection = collection || product.collection;
             product.images = images || product.images;
             product.isFeatured =
                 isFeatured !== undefined ? isFeatured : product.isFeatured;
             product.isPublished =
                 isPublished !== undefined ? isPublished : product.isPublished;
-            product.weight = weight || product.weight;
             product.sku = sku || product.sku;
 
             //   Save the updated product
@@ -128,12 +116,10 @@ router.get("/", async (req, res) => {
     try {
         const {
             collection,
-            colour,
             minPrice,
             maxPrice,
             sortBy,
             search,
-            category,
             brand,
             limit,
         } = req.query
@@ -145,16 +131,8 @@ router.get("/", async (req, res) => {
             query.collection = collection;
         }
 
-        if (category && category.toLocaleLowerCase() !== "all") {
-            query.category = category;
-        }
-
         if (brand) {
             query.brand = { $in: brand.split(",") };
-        }
-
-        if (colour) {
-            query.colours = { $in: [colour] };
         }
 
         if (minPrice || maxPrice) {

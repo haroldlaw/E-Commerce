@@ -5,16 +5,15 @@ const checkout = {
     createdAt: new Date(),
     checkoutItems: [{
         productId: 1,
-        name: "FujiFilm XT30",
-        colour: "Silver",
+        name: "Fujifilm X100V",
         quantity: 1,
-        price: 1000,
-        image: "https://picsum.photos/200?random=1"
+        price: 1500,
+        image: "${order.shippingAddress.city},"
     }],
     shippingAddress: {
-        address: "123",
-        city: "abc",
-        country: "def"
+        street: "52 Lios An Uisce",
+        city: "Galway",
+        country: "Ireland"
     }
 }
 
@@ -62,9 +61,6 @@ const OrderConfirmation = () => {
                                 />
                                 <div>
                                     <h4 className="text-md font-semibold">{item.name}</h4>
-                                    <p className="text-sm text-gray-500">
-                                        {item.colour}
-                                    </p>
                                 </div>
                                 <div className="ml-auto text-right">
                                     <p className="text-md">${item.price}</p>
@@ -85,9 +81,7 @@ const OrderConfirmation = () => {
                         <div>
                             <h4 className="text-lg font-semibold mb-2">Delivery</h4>
                             <p className="text-gray-600">
-                                {checkout.shippingAddress.address}
-                            </p>
-                            <p className="text-gray-600">
+                                {checkout.shippingAddress.street},{" "}
                                 {checkout.shippingAddress.city},{" "}
                                 {checkout.shippingAddress.country}
                             </p>

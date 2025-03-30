@@ -4,13 +4,12 @@ import PayPal from './PayPal'
 
 const cart = {
     products: [{
-        name: "FujiFilm XT30",
-        color: "Silver",
-        price: 1000,
-        image: "https://picsum.photos/200?random=1"
+        name: "Sony Alpha A7C II",
+        price: 1900,
+        image: "https://www.mpb.com/media-service/59f7d773-5909-4ffa-9420-7565d4d57ba8"
     }
     ],
-    totalPrice: 1000
+    totalPrice: 1900
 }
 
 const Checkout = () => {
@@ -22,7 +21,7 @@ const Checkout = () => {
     const [shippingAddress, setShippingAddress] = useState({
         firstName: "",
         lastName: "",
-        address: "",
+        street: "",
         city: "",
         eircode: "",
         country: "",
@@ -90,14 +89,14 @@ const Checkout = () => {
                         </div>
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700">Address</label>
+                        <label className="block text-gray-700">Street</label>
                         <input
                             type="text"
-                            value={shippingAddress.address}
+                            value={shippingAddress.street}
                             onChange={(e) =>
                                 setShippingAddress({
                                     ...shippingAddress,
-                                    address: e.target.value,
+                                    street: e.target.value,
                                 })
                             }
                             className="w-full p-2 border rounded"
@@ -198,7 +197,6 @@ const Checkout = () => {
                                 />
                                 <div>
                                     <h3 className="text-md">{product.name}</h3>
-                                    <p className="text-gray-500">Colour: {product.color}</p>
                                 </div>
                             </div>
                             <p className="text-xl">${product.price?.toLocaleString()}</p>
