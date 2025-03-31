@@ -31,7 +31,7 @@ export const fetchProductByFilter = createAsyncThunk(
 
 // Async thunk to fetch a single product by id
 export const fetchProductDetails = createAsyncThunk(
-    "product/fetchProductDetails",
+    "products/fetchProductDetail",
     async (id) => {
         const response = await axios.get(
             `${import.meta.env.VITE_BACKEND_URL}/api/product/${id}`
@@ -43,10 +43,10 @@ export const fetchProductDetails = createAsyncThunk(
 // Async thunk to update product
 export const updateProduct = createAsyncThunk(
     "product/updateProduct",
-    async ({ id, productData }) => {
+    async ({ id, productDetail }) => {
         const response = await axios.put(
             `${import.meta.env.VITE_BACKEND_URL}/api/product/${id}`,
-            productData,
+            productDetail,
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("userToken")}`,
@@ -58,13 +58,13 @@ export const updateProduct = createAsyncThunk(
 )
 
 const productSlice = createSlice({
-    name: "product",
+    name: "products",
     initialState: {
-        product: [],
+        products: [],
         selectedProduct: null, // Store the details of the single Product
         loading: false,
         error: null,
-        filter: {
+        filters: {
             brand: "",
             minPrice: "",
             maxPrice: "",
@@ -74,11 +74,11 @@ const productSlice = createSlice({
         },
     },
     reducers: {
-        setFilter: (state, action) => {
-            state.filter = { ...state.filter, ...action.payload };
+        setFilters: (state, action) => {
+            state.filters = { ...state.filter, ...action.payload };
         },
-        clearFilter: (state) => {
-            state.filter = {
+        clearFilters: (state) => {
+            state.filters = {
                 brand: "",
                 minPrice: "",
                 maxPrice: "",
@@ -97,7 +97,7 @@ const productSlice = createSlice({
             })
             .addCase(fetchProductByFilter.fulfilled, (state, action) => {
                 state.loading = false;
-                state.product = Array.isArray(action.payload) ? action.payload : [];
+                state.products = Array.isArray(action.payload) ? action.payload : [];
             })
             .addCase(fetchProductByFilter.rejected, (state, action) => {
                 state.loading = false;
@@ -116,7 +116,7 @@ const productSlice = createSlice({
                 state.loading = false;
                 state.error = action.error.message;
             })
-            //   Handle updating product
+            //   handle updating product
             .addCase(updateProduct.pending, (state) => {
                 state.loading = true;
                 state.error = null;
@@ -124,11 +124,11 @@ const productSlice = createSlice({
             .addCase(updateProduct.fulfilled, (state, action) => {
                 state.loading = false;
                 const updatedProduct = action.payload;
-                const index = state.product.findIndex(
-                    (product) => product._id === updateProduct.id
+                const index = state.products.findIndex(
+                    (product) => product.id === updateProduct.id
                 );
                 if (index !== -1) {
-                    state.product[index] = updatedProduct;
+                    state.products[index] = updatedProduct;
                 }
             })
             .addCase(updateProduct.rejected, (state, action) => {

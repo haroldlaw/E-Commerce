@@ -4,11 +4,23 @@ import { FaFilter } from 'react-icons/fa'
 import Filter from '../components/Product/Filter'
 import Sort from '../components/Product/Sort'
 import ProductGrid from '../components/Product/ProductGrid'
+import { useParams, useSearchParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchProductByFilter } from '../redux/slice/productSlice'
 
 const Product = () => {
-    const [products, setProducts] = useState([])
+    const { collection } = useParams()
+    const [searchParams] = useSearchParams()
+    const dispatch = useDispatch()
+    const { products, loading, error } = useSelector((state) => state.products)
+    const queryParams = Object.fromEntries([...searchParams])
+
     const filterRef = useRef(null)
     const [isFilterOpen, setIsFilterOpen] = useState(false)
+
+    useEffect(() => {
+        dispatch(fetchProductByFilter({ collection, ...queryParams }));
+    }, [dispatch, collection, searchParams])
 
     const toggleFilter = () => {
         setIsFilterOpen(!isFilterOpen)
@@ -25,31 +37,6 @@ const Product = () => {
         document.removeEventListener("mousedown", handleClickOutside)
     })
 
-    useEffect(() => {
-        setTimeout(() => {
-            const fetchedProducts = [
-                {
-                    id: 1,
-                    name: "Fujifilm X100V",
-                    price: 1500,
-                    images: [{ url: "https://www.mpb.com/media-service/1606dcec-3cf0-4ff3-a27e-d6742931e8b0" }]
-                },
-                {
-                    id: 2,
-                    name: "Contax T2",
-                    price: 1250,
-                    images: [{ url: "https://www.mpb.com/media-service/f3d3f357-1592-4c60-9e67-031926d0f7d2" }]
-                },
-                {
-                    id: 3,
-                    name: "Leica Q3",
-                    price: 5500,
-                    images: [{ url: "https://www.mpb.com/media-service/9929caa3-18e7-4c5f-aebb-40607fc24376" }]
-                }
-            ]
-            setProducts(fetchedProducts)
-        }, 1000)
-    })
     return (
         <div className='flex flex-col lg:flex-row'>
             {/* Mobile Filter button */}
@@ -71,7 +58,7 @@ const Product = () => {
                 <Sort />
 
                 {/* Product Grid */}
-                <ProductGrid products={products} />
+                <ProductGrid products={products} loading={loading} error={error} />
             </div>
         </div>
     )

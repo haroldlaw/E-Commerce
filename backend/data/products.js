@@ -11,7 +11,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/341f363e-50bc-4ace-a059-5804cd2fa966",
+                url: "https://th.bing.com/th/id/R.3cf940d911f745456b77f4b08e17569a?rik=08o2feHN8uDTUg&riu=http%3a%2f%2fwww.thephoblographer.com%2fwp-content%2fuploads%2f2019%2f01%2fPauleth-Ip-The-Phoblographer-Sony-A6400-Product-Image-03.jpg&ehk=18M%2b0ZmsR%2fCotSxQXZcpFsSlsdRzRmlxPboKkiGttcM%3d&risl=&pid=ImgRaw&r=0",
                 altText: "Sony Alpha A6700",
             }
         ],
@@ -30,7 +30,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/59f7d773-5909-4ffa-9420-7565d4d57ba8",
+                url: "https://preview.redd.it/sonys-version-of-the-fuji-film-aesthetic-v0-2jylb061jrnc1.jpg?width=3024&format=pjpg&auto=webp&s=2c196042592599a0cdd1fab2c49dbf25e1b3fb14",
                 altText: "Sony Alpha A7C II",
             }
         ],
@@ -49,7 +49,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/8bed0ab1-a9e1-4ea8-9d63-f2c6c9ec47d1",
+                url: "https://www.soyacincau.com/wp-content/uploads/2019/06/190613-sony-a6400-review-malaysia-1-3000x1630.jpg",
                 altText: "Sony Alpha A6400",
             }
         ],
@@ -68,7 +68,7 @@ const products = [
         collection: "Lenses",
         images: [
             {
-                url: "https://www.mpb.com/media-service/4c314ca1-0d5a-4ddc-991f-640393caf9d4",
+                url: "https://i.pinimg.com/originals/89/7a/c1/897ac14bed947e58e33f23595a54adef.png",
                 altText: "Sony FE 70-300mm f/4.5-5.6 G OSS",
             }
         ],
@@ -87,8 +87,7 @@ const products = [
         collection: "Lenses",
         images: [
             {
-                url: "https://www.mpb.com/media-service/02696285-1794-4340-89de-5f6d4b65239e",
-                altText: "Sony FE 28-70mm f3.5-5.6 OSS",
+                url: "https://th.bing.com/th/id/OIP.NW5MXBdxGSWf8rhI2AkH9gHaHa?rs=1&pid=ImgDetMain",
             }
         ],
         rating: 4.6,
@@ -106,7 +105,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/30c2c1db-c0d7-4fbf-9e45-1a925c836edb",
+                url: "https://fotocentreindia.com/wp-content/uploads/2017/05/Fujifilm-XF-18-55mm-f2.8-4-R-LM-OIS-Zoom-Lens-Online-Buy-Mumbai-India-5-1000x1000.jpg",
                 altText: "Fujifilm XF 18-55mm f/2.8-4 R LM OIS",
             }
         ],
@@ -125,7 +124,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/fc49719f-f49a-41f8-8fea-4fc5f7615612",
+                url: "https://www.adorama.com/alc/wp-content/uploads/2021/02/Front-Quarter-1024x684.jpg",
                 altText: "Fujifilm X-E4",
             }
         ],
@@ -144,7 +143,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/1606dcec-3cf0-4ff3-a27e-d6742931e8b0",
+                url: "https://www.cameralabs.com/wp-content/uploads/2020/02/fujifilm-x100v-hero1.jpg",
                 altText: "Fujifilm X100V",
             }
         ],
@@ -163,7 +162,7 @@ const products = [
         collection: "Film camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/f3d3f357-1592-4c60-9e67-031926d0f7d2",
+                url: "https://gridfiti.com/wp-content/uploads/2022/02/Gridfiti_Blog_ContaxT2SamplePhotos_ContaxT2.jpg",
                 altText: "Contax T2",
             }
         ],
@@ -182,7 +181,7 @@ const products = [
         collection: "Film camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/2ca54fd0-374f-4dbc-bf00-925a123ae166",
+                url: "https://img5.juzaphoto.com/001/shared_files/uploads/3563585_l.jpg",
                 altText: "Leica M4",
             }
         ],
@@ -201,7 +200,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/021d84da-3d39-4cce-a66f-24ecbace3579",
+                url: "https://softervolumes.com/wp-content/uploads/2020/09/Leica-Q2-Review-HEY-GENTS-Feature-Image-1200x1590.jpg",
                 altText: "Leica Q2",
             }
         ],
@@ -220,7 +219,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/9929caa3-18e7-4c5f-aebb-40607fc24376",
+                url: "https://cdn.mos.cms.futurecdn.net/ish94EhzLvdTB8wk5aoBKe-1024-80.jpg",
                 altText: "Leica Q3",
             }
         ],
@@ -239,7 +238,7 @@ const products = [
         collection: "Lenses",
         images: [
             {
-                url: "https://www.mpb.com/media-service/6872520b-a2bd-4b9e-ae1a-17c9f7d09d54",
+                url: "https://www.wexphotovideo.com/globalassets/product-images/1708000/1708890.jpg",
                 altText: "Nikon AF-S Nikkor 70-200mm f/2.8G ED VR II",
             }
         ],
@@ -258,7 +257,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/092ad1b8-8baa-47b1-8e85-c3fd63258450",
+                url: "https://shotkit.com/wp-content/uploads/bb-plugin/cache/Df_body-0020-landscape-18819e057feef2b376dd838e7d03f06d-zybravgx2q47.jpg",
                 altText: "Nikon Df",
             }
         ],
@@ -277,7 +276,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/f9c69b9b-6e30-43b9-b1d7-259e429e1129",
+                url: "https://images.ctfassets.net/bht415zek091/12818-image-1/af026d818ba43558d67e91b1f4c85f16/12818-image-1.jpeg",
                 altText: "Ricoh GR III",
             }
         ],
@@ -315,7 +314,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/0ed306c0-b42f-4628-b7e9-6aabe7203b6e",
+                url: "https://www.cnet.com/a/img/resize/e4cfb91883ffa6540ada2e268b19a986de962f7e/hub/2014/11/07/f56bfc2f-2ed9-4a4b-abc5-4188fd0ad8a4/canong7x.jpg?auto=webp&fit=cover&height=482&width=856",
                 altText: "Canon PowerShot G7 X",
             }
         ],
@@ -334,7 +333,7 @@ const products = [
         collection: "Film camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/3d0f0db6-8a14-4c96-9e0f-ad3964fff91f",
+                url: "https://down-th.img.susercontent.com/file/th-11134207-7qul8-ljz1ly1bs7619a",
                 altText: "Leica Minilux",
             }
         ],
@@ -353,7 +352,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/8ce75102-bb2d-4cdc-ae15-efbe43cb1d40",
+                url: "https://amateurphotographer.com/wp-content/uploads/sites/7/2021/12/fujifilm-xt30-markii-sensor.jpg",
                 altText: "Fujifilm X-T30 II",
             }
         ],
@@ -372,7 +371,7 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/fce34e45-863c-49e1-9de2-991961d481fa",
+                url: "https://3.img-dpreview.com/files/p/E~TS940x788~articles/4288708531/story_policy_bg.png",
                 altText: "Ricoh GR IIIx",
             }
         ],
