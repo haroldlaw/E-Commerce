@@ -1,8 +1,8 @@
 const products = [
     {
-        name: "Sony Alpha A6700",
+        name: "Sony A6700",
         description:
-            "The α6700 combines the latest AI technology with Sony's outstanding α-series image quality in a compact APS-C camera body. Offering enhanced subject recognition, the latest technology for capturing stills and movies, and E-mount lens compatibility, the lightweight α6700 is designed for creative adventures, anytime, anywhere",
+            "The Sony A6700 system camera is a full-frame innovation in APS-C format. Experience outstanding image quality, precise autofocus and unlimited creativity in a small, manageable package.",
         price: 1500,
         discountPrice: 1300,
         countInStock: 10,
@@ -11,36 +11,36 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://th.bing.com/th/id/R.3cf940d911f745456b77f4b08e17569a?rik=08o2feHN8uDTUg&riu=http%3a%2f%2fwww.thephoblographer.com%2fwp-content%2fuploads%2f2019%2f01%2fPauleth-Ip-The-Phoblographer-Sony-A6400-Product-Image-03.jpg&ehk=18M%2b0ZmsR%2fCotSxQXZcpFsSlsdRzRmlxPboKkiGttcM%3d&risl=&pid=ImgRaw&r=0",
-                altText: "Sony Alpha A6700",
+                url: "/uploads/sony-a6700.webp",
+                altText: "Sony A6700",
             }
         ],
         rating: 4.5,
-        numReviews: 10,
+        numReviews: 15,
     },
     {
-        name: "Sony Alpha A7C II",
+        name: "Sony A7C II",
         description:
-            "Compact and lightweight, the α7C II is the full-frame camera that serious creators have been waiting for. Packed with cutting-edge capture technology for both stills and movies, it's the essential tool for capturing the world the way you want to",
-        price: 1900,
-        discountPrice: 1800,
+            "The Sony A7C Mark II is the worthy successor to the A7C. Enjoy the latest high-end performances in a compact body. The camera has an improved sensor, processor, autofocus and up to 7-stops image stabilisation.",
+        price: 2200,
+        discountPrice: 1900,
         countInStock: 5,
         sku: "OX-SH-002",
         brand: "Sony",
         collection: "Digital camera",
         images: [
             {
-                url: "https://preview.redd.it/sonys-version-of-the-fuji-film-aesthetic-v0-2jylb061jrnc1.jpg?width=3024&format=pjpg&auto=webp&s=2c196042592599a0cdd1fab2c49dbf25e1b3fb14",
-                altText: "Sony Alpha A7C II",
+                url: "/uploads/sony-a7c-ii.webp",
+                altText: "Sony A7C II",
             }
         ],
-        rating: 4.5,
-        numReviews: 5,
+        rating: 5.0,
+        numReviews: 3,
     },
     {
-        name: "Sony Alpha A6400",
+        name: "Sony A6400",
         description:
-            "The Alpha a6400 from Sony is an APS-C-format mirrorless camera that adopts many of the features normally reserved for their full-frame lineup. This includes an autofocus acquisition of 0.02 seconds, Real-time Eye AF and Real-time Tracking capabilities, high-speed shooting up to 11 fps and silent shooting up to 8 fps, both with AF/AE tracking, an upgraded BIONZ X image processing engine, an LCD touchscreen that tilts 180° up and 74° down, UHD 4K movie recording with full pixel readout and no pixel binning, internal recording for time-lapse videos, and more",
+            "The Sony A6400 is an EISA award-winning camera featuring fast automatic focus of just 0.02 seconds, enhanced Eye Autofocus and newly-developed Real-Time Tracking.",
         price: 750,
         discountPrice: 700,
         countInStock: 10,
@@ -49,334 +49,335 @@ const products = [
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.soyacincau.com/wp-content/uploads/2019/06/190613-sony-a6400-review-malaysia-1-3000x1630.jpg",
-                altText: "Sony Alpha A6400",
+                url: "/uploads/sony-a6400.webp",
+                altText: "Sony A6400",
             }
         ],
-        rating: 4.3,
-        numReviews: 15,
+        rating: 4.5,
+        numReviews: 54,
     },
     {
-        name: "Sony FE 70-300mm f/4.5-5.6 G OSS",
+        name: "Sony FE 70-300mm F4.5-5.6 G OSS",
         description:
-            "Spanning a useful range of telephoto focal lengths, the FE 70-300mm f/4.5-5.6 G OSS from Sony is a versatile zoom lens designed for full-frame E-mount mirrorless cameras. Complementing the reach, this lens' optical design incorporates four aspherical elements and two extra-low dispersion glass elements to control spherical and chromatic aberrations throughout the zoom range for increased clarity, sharpness, and colour accuracy. A Nano AR coating has also been applied to individual lens elements to minimise lens flare and ghosting for increased contrast and colour fidelity when working in strong lighting conditions. Well-suited to a variety of telephoto needs, this zoom lens balances both a versatile focal length range along with a sophisticated optical design for maintained image quality",
-        price: 650,
-        discountPrice: 600,
+            "The Sony FE 70-300mm F4.5-5.6 G OSS is a versatile zoom lens, designed for full frame E-mount mirrorless cameras. The Sony FE 70-300mm F4.5-5.6 G OSS is a weatherproof telephoto lens with image stabilisation and high resolution over the whole zoom range.",
+        price: 1150,
+        discountPrice: 1100,
         countInStock: 5,
         sku: "OX-SH-004",
         brand: "Sony",
-        collection: "Lenses",
+        collection: "Lens",
         images: [
             {
-                url: "https://i.pinimg.com/originals/89/7a/c1/897ac14bed947e58e33f23595a54adef.png",
-                altText: "Sony FE 70-300mm f/4.5-5.6 G OSS",
-            }
-        ],
-        rating: 4.5,
-        numReviews: 10,
-    },
-    {
-        name: "Sony FE 28-70mm f3.5-5.6 OSS",
-        description:
-            "The Sony FE 28-70mm f3.5-5.6 OSS lens covers every department. The versatile focal range makes it the ideal lens to record the moment as you see it without compromising quality. The fantastic build ensures quality throughout install confidence as you shoot. It is the ideal lens for all purposes, covering all bases in one lens",
-        price: 160,
-        discountPrice: 130,
-        countInStock: 10,
-        sku: "OX-SH-005",
-        brand: "Sony",
-        collection: "Lenses",
-        images: [
-            {
-                url: "https://th.bing.com/th/id/OIP.NW5MXBdxGSWf8rhI2AkH9gHaHa?rs=1&pid=ImgDetMain",
-            }
-        ],
-        rating: 4.6,
-        numReviews: 12,
-    },
-    {
-        name: "Fujifilm XF 18-55mm f/2.8-4 R LM OIS",
-        description:
-            "Ideal for general use! The Fuji 18-55mm f/2.8-4 lens delivers fantastic photographs. Made to cover all bases, the lens boasts an impressive f/2.8 aperture. Allowing you to capture any moment with real sharpness, no matter what lighting situation. It is the ideal all purpose lens",
-        price: 250,
-        discountPrice: 220,
-        countInStock: 6,
-        sku: "OX-SH-006",
-        brand: "Fujifilm",
-        collection: "Digital camera",
-        images: [
-            {
-                url: "https://fotocentreindia.com/wp-content/uploads/2017/05/Fujifilm-XF-18-55mm-f2.8-4-R-LM-OIS-Zoom-Lens-Online-Buy-Mumbai-India-5-1000x1000.jpg",
-                altText: "Fujifilm XF 18-55mm f/2.8-4 R LM OIS",
-            }
-        ],
-        rating: 4.5,
-        numReviews: 7,
-    },
-    {
-        name: "Fujifilm X-E4",
-        description:
-            "A camera is a tool designed to capture a precious memory that will never happen again. A split second in your lifetime. No other device performs as well as a dedicated camera to capture these memories in the highest quality possible. However, we realise that it’s not practical to carry a large, heavy dedicated camera wherever you go, but at the same time you don’t want to sacrifice the quality of your captured images, this is why Fujifilm created the X-E4. Using the same sensor and processor as our flagship X Series camera, in one of the smallest bodies we’ve made, you don’t need to compromise anymore. The X-E4 is designed to help you Make More of those memories while carrying Less",
-        price: 1000,
-        discountPrice: 950,
-        countInStock: 3,
-        sku: "OX-SH-007",
-        brand: "Fujifilm",
-        collection: "Digital camera",
-        images: [
-            {
-                url: "https://www.adorama.com/alc/wp-content/uploads/2021/02/Front-Quarter-1024x684.jpg",
-                altText: "Fujifilm X-E4",
-            }
-        ],
-        rating: 4.3,
-        numReviews: 8,
-    },
-    {
-        name: "Fujifilm X100V",
-        description:
-            "The Fujifilm X100V compact camera boasts a redesigned 23mm f/2 lens. Powered by the X-Processor 4, the X100V’s 26-megapixel APS-C sensor has backside illumination (BSI). The X100V can shoot bursts of up to 20fps with its electronic shutter or 11fps mechanically. The camera’s native ISO is 160–12,800, or 80–51,200 expanded. The X100V added a tilting touchscreen, albeit with no rear D-pad, and weighs just 478g \[16.86oz\]. You can shoot 4K video up to 30p, and the X100V outputs 4:2:2 10-bit footage",
-        price: 1500,
-        discountPrice: 1400,
-        countInStock: 2,
-        sku: "OX-SH-008",
-        brand: "Fujifilm",
-        collection: "Digital camera",
-        images: [
-            {
-                url: "https://www.cameralabs.com/wp-content/uploads/2020/02/fujifilm-x100v-hero1.jpg",
-                altText: "Fujifilm X100V",
-            }
-        ],
-        rating: 4.8,
-        numReviews: 20,
-    },
-    {
-        name: "Contax T2",
-        description:
-            "The Contax T2 is a photographer's dream, combining classic rangefinder simplicity with exceptional Zeiss optics. Its sleek, titanium body is built to last, comfortably fitting in your hand for effortless street photography. With a sharp Carl Zeiss Sonnar lens and a near-silent shutter, you'll capture fleeting moments with stunning clarity and discretion, making it a joy to use and a timeless treasure for any photography enthusiast",
-        price: 1250,
-        discountPrice: 1200,
-        countInStock: 1,
-        sku: "OX-SH-009",
-        brand: "Contax",
-        collection: "Film camera",
-        images: [
-            {
-                url: "https://gridfiti.com/wp-content/uploads/2022/02/Gridfiti_Blog_ContaxT2SamplePhotos_ContaxT2.jpg",
-                altText: "Contax T2",
-            }
-        ],
-        rating: 4.9,
-        numReviews: 3,
-    },
-    {
-        name: "Leica M4",
-        description:
-            "The M4 started production in November 1966, as the direct successor of the M3 and M2, featuring frame lines for 35 mm, 50 mm, 90 mm and 135 mm lenses in a 0.72 magnification viewfinder. It has the frame counter of the M3, with automatic reset after reloading",
-        price: 1700,
-        discountPrice: 1500,
-        countInStock: 6,
-        sku: "OX-SH-010",
-        brand: "Leica",
-        collection: "Film camera",
-        images: [
-            {
-                url: "https://img5.juzaphoto.com/001/shared_files/uploads/3563585_l.jpg",
-                altText: "Leica M4",
-            }
-        ],
-        rating: 4.5,
-        numReviews: 15,
-    },
-    {
-        name: "Leica Q2",
-        description:
-            "Leica Camera is pleased to announce the introduction of its latest camera, and the new evolution of one of its most popular recent releases, the Leica Q2. The Leica Q2 features a brand new 47.3 megapixel full frame sensor, integrated weather sealing throughout the body and built-in Summilux 28mm f/1.7 lens, a brand new electronic viewfinder, lightning-fast autofocus and burst shooting, 4K video, a revised button layout and refined design",
-        price: 3900,
-        discountPrice: 3850,
-        countInStock: 1,
-        sku: "OX-SH-011",
-        brand: "Leica",
-        collection: "Digital camera",
-        images: [
-            {
-                url: "https://softervolumes.com/wp-content/uploads/2020/09/Leica-Q2-Review-HEY-GENTS-Feature-Image-1200x1590.jpg",
-                altText: "Leica Q2",
-            }
-        ],
-        rating: 4.5,
-        numReviews: 12,
-    },
-    {
-        name: "Leica Q3",
-        description:
-            "The compact Leica Q3 full frame camera delivers amazing image quality for photos and video in virtually any kind of lighting. It is exceptionally easy to use, and seamlessly connected, empowering anyone to create audio-visual content in breath-taking quality.  Capturing a unique point of view with the Leica Q3 means committing to a camera that integrates easily, naturally, and intuitively into everyday creative processes. A unique companion that combines style and cutting-edge technology",
-        price: 5500,
-        discountPrice: 5300,
-        countInStock: 2,
-        sku: "OX-SH-012",
-        brand: "Leica",
-        collection: "Digital camera",
-        images: [
-            {
-                url: "https://cdn.mos.cms.futurecdn.net/ish94EhzLvdTB8wk5aoBKe-1024-80.jpg",
-                altText: "Leica Q3",
+                url: "/uploads/sony-fe-70-300mm-f-4-5-5-6-g-oss.webp",
+                altText: "Sony FE 70-300mm F4.5-5.6 G OSS",
             }
         ],
         rating: 4.7,
         numReviews: 13,
     },
     {
-        name: "Nikon AF-S Nikkor 70-200mm f/2.8G ED VR II",
+        name: "Sigma 24-70mm F/2.8 DG DN ART Sony FE",
         description:
-            "The Nikon AF-S 70-200mm f/2.8G IF-ED VR II lens provides exciting quality. Perfect for versatility, the lens provides a perfect springboard to better images. The fantastic optics delivers great image quality in a f/2.8 aperture lens. The ideal professional all rounder",
-        price: 850,
-        discountPrice: 750,
-        countInStock: 5,
-        sku: "OX-SH-013",
-        brand: "Nikon",
-        collection: "Lenses",
+            "The Sigma 24-70mm F2.8 DG DN (A) is a versatile wide-angle to short telephoto zoom lens. The lens features an F/2.8 constant maximum aperture and is a true workhorse for Sony's full-frame E-mount system cameras",
+        price: 1100,
+        discountPrice: 1000,
+        countInStock: 9,
+        sku: "OX-SH-005",
+        brand: "Sigma",
+        collection: "Lens",
         images: [
             {
-                url: "https://www.wexphotovideo.com/globalassets/product-images/1708000/1708890.jpg",
-                altText: "Nikon AF-S Nikkor 70-200mm f/2.8G ED VR II",
+                url: "/uploads/sigma-24-70mm-f-2-8-dg-dn-art-sony-fe.webp",
+                altText: "Sigma 24-70mm F/2.8 DG DN ART Sony FE",
+            }
+        ],
+        rating: 4.7,
+        numReviews: 33,
+    },
+    {
+        name: "Fujifilm XF 70-300mm F/4.0-5.6 R LM OIS WR",
+        description:
+            "The 70-300mm is a telephoto zoom lens that can be used for a variety of photography purposes thanks to its variable focal length. With built-in image stabilization, fast and silent autofocus and a weatherproof body, this lens should not be missing from your camera equipmentIdeal for general use! The Fuji 18-55mm f/2.8-4 lens delivers fantastic photographs. Made to cover all bases, the lens boasts an impressive f/2.8 aperture. Allowing you to capture any moment with real sharpness, no matter what lighting situation. It is the ideal all purpose lens.",
+        price: 800,
+        discountPrice: 750,
+        countInStock: 6,
+        sku: "OX-SH-006",
+        brand: "Fujifilm",
+        collection: "Lens",
+        images: [
+            {
+                url: "/uploads/fujifilm-xf-70-300mm-f-4-0-5-6-r-lm-ois-wr.webp",
+                altText: "Fujifilm XF 70-300mm F/4.0-5.6 R LM OIS WR",
+            }
+        ],
+        rating: 4.6,
+        numReviews: 7,
+    },
+    {
+        name: "Fujifilm X-S20",
+        description:
+            "The Fujifilm X-S20 is the ultimate all-in-one camera combining top-quality performance with a compact, lightweight body.",
+        price: 1300,
+        discountPrice: 1200,
+        countInStock: 3,
+        sku: "OX-SH-007",
+        brand: "Fujifilm",
+        collection: "Digital camera",
+        images: [
+            {
+                url: "/uploads/fujifilm-xs20.webp",
+                altText: "Fujifilm X-S20",
+            }
+        ],
+        rating: 4.1,
+        numReviews: 5,
+    },
+    {
+        name: "Fujifilm X100VI",
+        description:
+            "The Fujifilm X100VI combines the distinctive look and feel of analog photography with contemporary, superior image quality.",
+        price: 2000,
+        discountPrice: 1900,
+        countInStock: 2,
+        sku: "OX-SH-008",
+        brand: "Fujifilm",
+        collection: "Digital camera",
+        images: [
+            {
+                url: "/uploads/fujifilm-x100vi.webp",
+                altText: "Fujifilm X100VI",
+            }
+        ],
+        rating: 4.8,
+        numReviews: 10,
+    },
+    {
+        name: "Pentax 17",
+        description:
+            "The Pentax 17 pays tribute to the world of photography. It is an analogue camera with film rolls and is ideal for photographers who want to express their originality and creativity or for those who want to explore the world of analogue.",
+        price: 500,
+        discountPrice: 450,
+        countInStock: 1,
+        sku: "OX-SH-009",
+        brand: "Pentax",
+        collection: "Film camera",
+        images: [
+            {
+                url: "/uploads/pentax17.webp",
+                altText: "Pentax 17",
+            }
+        ],
+        rating: 4.8,
+        numReviews: 5,
+    },
+    {
+        name: "Panasonic Lumix DC-TZ99",
+        description:
+            "The Panasonic Lumix DC-TZ99 is the ideal camera for those who want to combine compact dimensions with powerful performance. Thanks to the 30x LEICA 24-720mm zoom lens, you'll effortlessly capture everything from spontaneous moments with kids to breathtaking travel shots.",
+        price: 550,
+        discountPrice: 500,
+        countInStock: 6,
+        sku: "OX-SH-010",
+        brand: "Panasonic",
+        collection: "Digital camera",
+        images: [
+            {
+                url: "/uploads/panasonic-lumix-dc-tz99.webp",
+                altText: "Panasonic Lumix DC-TZ99",
             }
         ],
         rating: 4.3,
-        numReviews: 12,
+        numReviews: 2,
     },
     {
-        name: "Nikon Df",
+        name: "Nikon Z6 III",
         description:
-            "Based on a vintage design, the Nikon DF Digital SLR Camera offers an outstanding full frame sensor to match the adored 35mm ratio. With the combination of a full frame sensor and 16.2 megapixels to rely on, you will always be able to catch the right moment with confidence. The impressive low light performance boasts versatile options for the photographer looking to step up their game",
-        price: 1250,
-        discountPrice: 1200,
-        countInStock: 3,
-        sku: "OX-SH-014",
+            "The Nikon Z6 III is Nikon's flagship within the well-known Z series when it comes to innovations and precision. This system camera is designed for photo and videographers who do not want to compromise.",
+        price: 2450,
+        discountPrice: 2350,
+        countInStock: 1,
+        sku: "OX-SH-011",
         brand: "Nikon",
         collection: "Digital camera",
         images: [
             {
-                url: "https://shotkit.com/wp-content/uploads/bb-plugin/cache/Df_body-0020-landscape-18819e057feef2b376dd838e7d03f06d-zybravgx2q47.jpg",
-                altText: "Nikon Df",
+                url: "/uploads/nikon-z6-iii.webp",
+                altText: "Nikon Z6 III",
             }
         ],
-        rating: 4.4,
-        numReviews: 12,
+        rating: 5.0,
+        numReviews: 2,
     },
     {
-        name: "Ricoh GR III",
+        name: "Nikon ZF",
         description:
-            "The long-awaited instalment in the popular series of fast, compact cameras, the Ricoh GR III continues the legacy of being a pocketable powerhouse, offering impressive image quality, fast response, and immense portability. Featuring a redeveloped imaging feature-set, the GR III incorporates a 24.2MP APS-C CMOS sensor and GR Engine 6 to realise smooth tonality, rich colour and high sensitivity from ISO 100-102400, along with the ability to produce high-resolution 14-bit DNG stills or Full HD video. Complementing the sensor design is an updated 28mm-equivalent prime lens, which features a bright f/2.8 design, to suit everyday shooting with a comfortably wide field of view. Additionally, a first for GR, a 3-axis Shake Reduction System compensates for the effects of camera shake to help render sharper handheld shots when working with slower shutter speeds",
-        price: 950,
-        discountPrice: 900,
+            "With the Nikon ZF, you get a full-frame mirrorless camera that is tucked into a classic body, but features a wide range of modern technologies",
+        price: 1900,
+        discountPrice: 1800,
+        countInStock: 2,
+        sku: "OX-SH-012",
+        brand: "Nikon",
+        collection: "Digital camera",
+        images: [
+            {
+                url: "/uploads/nikon-zf.webp",
+                altText: "Nikon ZF",
+            }
+        ],
+        rating: 4.6,
+        numReviews: 6,
+    },
+    {
+        name: "Nikkor AF-S 24-70mm f/2.8E ED VR",
+        description:
+            "The Nikkor AF-S 24-70mm f/2.8 ED VR is the most widely used top-class zoom lens from the NIKKOR range and now also features Vibration Reduction (VR). This powerful zoom lens has a high brightness throughout the entire zoom range. Faster, stronger, and more stable than ever and extremely accurate; that is the Nikkor AF-S 24-70mm f/2.8 ED VR.",
+        price: 2300,
+        discountPrice: 2200,
+        countInStock: 5,
+        sku: "OX-SH-013",
+        brand: "Nikon",
+        collection: "Lens",
+        images: [
+            {
+                url: "/uploads/nikon-af-s-24-70mm-f-2-8e-ed-vr.webp",
+                altText: "Nikkor AF-S 24-70mm f/2.8E ED VR",
+            }
+        ],
+        rating: 4.8,
+        numReviews: 16,
+    },
+    {
+        name: "Fujifilm XF 56mm F/1.2 R WR",
+        description:
+            "The Fujifilm XF 56 mm F/1.2 R WR is a tremendously fast mid-telephoto lens, ideal for portrait photography.",
+        price: 1000,
+        discountPrice: 950,
+        countInStock: 3,
+        sku: "OX-SH-014",
+        brand: "Sigma",
+        collection: "Lens",
+        images: [
+            {
+                url: "/uploads/fujifilm-xf-56mm-f-1-2-r-wr.webp",
+                altText: "Fujifilm XF 56mm F/1.2 R WR",
+            }
+        ],
+        rating: 4.7,
+        numReviews: 3,
+    },
+    {
+        name: "Ricoh GR III HDF",
+        description:
+            "The Ricoh GR III HDF is virtually the same camera as the Ricoh GR III, with one important difference, the Highlight Diffusion Filter (HDF). With this built-in filter, you as a photographer can add a nostalgic, cinematic atmosphere to your images.",
+        price: 1150,
+        discountPrice: 1100,
         countInStock: 6,
         sku: "OX-SH-015",
         brand: "Ricoh",
         collection: "Digital camera",
         images: [
             {
-                url: "https://images.ctfassets.net/bht415zek091/12818-image-1/af026d818ba43558d67e91b1f4c85f16/12818-image-1.jpeg",
-                altText: "Ricoh GR III",
+                url: "/uploads/ricoh-gr-iii-hdf.webp",
+                altText: "Ricoh GR III HDF",
             }
         ],
         rating: 4.6,
         numReviews: 15,
     },
     {
-        name: "Canon EF 24-70mm f/4 L IS USM",
+        name: "Canon EOS R7",
         description:
-            "The Canon EF 24-70mm f/4 L IS USM lens provides the photographer with fantastic quality. Part of the prestigious L series, it offers a unique chance to record a range of subjects all in one lens. The fast f/4 lens ensures you are always in the moment as you photograph, helping you deliver excellence to your clients",
-        price: 550,
-        discountPrice: 500,
+            "The Canon EOS R7 is a fast APS-C system camera for the demanding hobbyist. The crop sensor with 32.5 megapixels guarantees razor-sharp photos and breathtaking videos in 4K resolution.",
+        price: 1300,
+        discountPrice: 1200,
         countInStock: 6,
         sku: "OX-SH-016",
         brand: "Canon",
-        collection: "Lenses",
+        collection: "Digital camera",
         images: [
             {
-                url: "https://www.mpb.com/media-service/037bcc94-8e15-4c8f-9d82-85d64fb9a8ee",
-                altText: "Canon EF 24-70mm f/4 L IS USM",
+                url: "/uploads/canon-eos-r7.webp",
+                altText: "Canon EOS R7",
             }
         ],
-        rating: 4.3,
-        numReviews: 15,
+        rating: 4.5,
+        numReviews: 42,
     },
     {
-        name: "Canon PowerShot G7 X",
+        name: "Canon Powershot G7X Mark III",
         description:
-            "Perfect for travel! The Canon PowerShot G7 X Digital Compact Camera offers fantastic quality. Ideal for the photographer looking to record the moment without the added weight, the camera offers a unique fusion of the two. Perfect for travelling, the lightweight nature makes it an incredibly exciting option to record the moment as you see it, all in a portable camera",
-        price: 800,
-        discountPrice: 700,
+            "The Canon Powershot G7X Mark III black is a compact camera with striking image quality. The Canon Powershot G7X Mark III has the possibility to stream live, take vertical video and the long-awaited microphone input is included! A real vlogging camera!",
+        price: 1000,
+        discountPrice: 900,
         countInStock: 5,
         sku: "OX-SH-017",
         brand: "Canon",
         collection: "Digital camera",
         images: [
             {
-                url: "https://www.cnet.com/a/img/resize/e4cfb91883ffa6540ada2e268b19a986de962f7e/hub/2014/11/07/f56bfc2f-2ed9-4a4b-abc5-4188fd0ad8a4/canong7x.jpg?auto=webp&fit=cover&height=482&width=856",
-                altText: "Canon PowerShot G7 X",
+                url: "/uploads/canon-powershot-g7x-mark-iii.webp",
+                altText: "Canon Powershot G7X Mark III",
             }
         ],
-        rating: 4.6,
-        numReviews: 12,
+        rating: 4.8,
+        numReviews: 20,
     },
     {
-        name: "Leica Minilux",
+        name: "Fujifilm X-T5",
         description:
-            "The Leica Minilux is a premium point-and-shoot film camera boasting Leica quality in a compact package. Known for its sleek design and high-performing Leica Summarit 40mm f/2.4 lens, it captures sharp images and offers both program and aperture priority modes for creative control. While some find the viewfinder small, enthusiasts love its simplicity and excellent results, making it a great choice for photographers seeking a luxurious take on everyday film photography",
-        price: 950,
-        discountPrice: 900,
+            "The Fujifilm X-T5 incorporates the nostalgic look & feel of analog cameras with staggering results.",
+        price: 1800,
+        discountPrice: 1700,
         countInStock: 3,
         sku: "OX-SH-018",
-        brand: "Leica",
-        collection: "Film camera",
+        brand: "Fujifilm",
+        collection: "Digital camera",
         images: [
             {
-                url: "https://down-th.img.susercontent.com/file/th-11134207-7qul8-ljz1ly1bs7619a",
-                altText: "Leica Minilux",
+                url: "/uploads/fujifilm_xt5.webp",
+                altText: "Fujifilm X-T5",
             }
         ],
-        rating: 4.2,
-        numReviews: 11,
+        rating: 4.7,
+        numReviews: 8,
     },
     {
-        name: "Fujifilm X-T30 II",
+        name: "Fujifilm GFX 100RF",
         description:
-            "Every element of FUJIFILM X-T30 II has been designed with photographers in mind. From the dial-based operation, and compact, lightweight body, to the latest-generation APS-C sensor, it lights up the imagination and inspires creativity. What’s more, X-T30 II fuses cutting edge, convenient features – such as a rear touchscreen and a discreet built-in flash – with a vintage aesthetic charm to make photography a truly immersive experience",
-        price: 850,
-        discountPrice: 800,
-        countInStock: 7,
+            "The Fujifilm GFX 100RF is a premium compact camera that allows you to take razor-sharp photos with a whopping 102 megapixel resolution. The Fujifilm GFX 100RF is perfect for any photographer looking for a first-class shooting experience and uncompromising image quality.",
+        price: 5500,
+        discountPrice: 5300,
+        countInStock: 3,
         sku: "OX-SH-019",
         brand: "Fujifilm",
         collection: "Digital camera",
         images: [
             {
-                url: "https://amateurphotographer.com/wp-content/uploads/sites/7/2021/12/fujifilm-xt30-markii-sensor.jpg",
-                altText: "Fujifilm X-T30 II",
+                url: "/uploads/fujifilm-gfx-100rf.webp",
+                altText: "Fujifilm GFX 100RF",
             }
         ],
-        rating: 4.7,
-        numReviews: 15,
+        rating: 5.0,
+        numReviews: 3,
     },
     {
-        name: "Ricoh GR IIIx",
+        name: "Panasonic Lumix DC-S5IIX",
         description:
-            "The RICOH GR IIIx has been developed in response to user requests for a new GR-series camera that will add a new perspective to the highly acclaimed RICOH GR III. The GR III was released in March 2019, featuring a 28mm wide-angle lens and designed to further enhance the essential values of the GR-series: optimising image quality, snapshot capabilities and portability. The newly designed 26.1mm GR lens provides a 40mm angle of view in the 35mm format, close to the photographer’s own effective field of view. Depending on the way the lens is used, this versatile angle of view can create different image renditions: you can capture an image similar to those taken at a 30mm semi-wide angle, or create a completely different visual expression as if taken at a 50mm standard angle. The camera also provides a range of new and upgraded post-shooting functions to edit captured images to the photographer’s preference",
-        price: 1100,
-        discountPrice: 1000,
-        countInStock: 3,
+            "The Panasonic Lumix DC-S5IIX is an addition to the popular LUMIX S series. The system camera has incredible photo and video performance in an attractive, compact design. Compared to the LUMIX S5 II, the LUMIX S5 II X goes the extra mile for professional videographers, in a sleek, matte black design.",
+        price: 2000,
+        discountPrice: 1900,
+        countInStock: 5,
         sku: "OX-SH-020",
-        brand: "Ricoh",
+        brand: "Panasonic",
         collection: "Digital camera",
         images: [
             {
-                url: "https://3.img-dpreview.com/files/p/E~TS940x788~articles/4288708531/story_policy_bg.png",
-                altText: "Ricoh GR IIIx",
+                url: "/uploads/panasonic-lumix-dc-s5-iix.webp",
+                altText: "Panasonic Lumix DC-S5IIX",
             }
         ],
-        rating: 4.6,
-        numReviews: 12,
+        rating: 4.8,
+        numReviews: 1,
     },
 ]
 

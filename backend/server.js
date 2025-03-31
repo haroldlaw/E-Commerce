@@ -5,11 +5,13 @@ const connectDB = require("./config/db")
 const userRoute = require("./routes/userRoute")
 const productRoute = require("./routes/productRoute")
 const cartRoute = require("./routes/cartRoute")
+const path = require('path')
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 dotenv.config()
 
 const PORT = process.env.PORT || 3000

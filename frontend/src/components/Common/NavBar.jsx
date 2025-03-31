@@ -26,13 +26,13 @@ const NavBar = () => {
                     </Link>
                 </div>
                 <div className='hidden md:flex space-x-6'>
-                    <Link to="/products/all" className='text-700 hover:text-black text-md font-medium'>
+                    <Link to="/products/all?collection=Digital camera" className='text-700 hover:text-black text-md font-medium'>
                         Digital Camera
                     </Link>
-                    <Link to="#" className='text-700 hover:text-black text-md font-medium'>
+                    <Link to="/products/all?collection=Film camera" className='text-700 hover:text-black text-md font-medium'>
                         Film Camera
                     </Link>
-                    <Link to="#" className='text-700 hover:text-black text-md font-medium'>
+                    <Link to="/products/all?collection=Lens" className='text-700 hover:text-black text-md font-medium'>
                         Lens
                     </Link>
                 </div>
@@ -66,13 +66,13 @@ const NavBar = () => {
                 <div className='p-4'>
                     <h2 className="text-xl font-semibold mb-4">Menu</h2>
                     <nav className='space-y-4'>
-                        <Link to="#" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
+                        <Link to="/products/all?collection=Digital camera" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
                             Digital Camera
                         </Link>
-                        <Link to="#" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
+                        <Link to="/products/all?collection=Film camera" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
                             Film Camera
                         </Link>
-                        <Link to="#" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
+                        <Link to="/products/all?collection=Lens" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
                             Lens
                         </Link>
                     </nav>
