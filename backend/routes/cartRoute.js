@@ -144,4 +144,21 @@ router.delete("/", async (req, res) => {
     }
 });
 
+//route to display product in cart
+router.get("/", async (req, res) => {
+    const { userId, guestId } = req.query;
+
+    try {
+        const cart = await getCart(userId, guestId);
+        if (cart) {
+            res.json(cart);
+        } else {
+            res.status(404).json({ message: "Cart not found" });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+});
+
 module.exports = router
