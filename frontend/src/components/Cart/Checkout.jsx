@@ -23,7 +23,7 @@ const Checkout = () => {
         lastName: "",
         street: "",
         city: "",
-        eircode: "",
+        postalCode: "",
         country: "",
         phone: "",
     })
@@ -120,14 +120,14 @@ const Checkout = () => {
                             />
                         </div>
                         <div>
-                            <label className="block text-gray-700">Eircode</label>
+                            <label className="block text-gray-700">Postal Code</label>
                             <input
                                 type="text"
-                                value={shippingAddress.eircode}
+                                value={shippingAddress.postalCode}
                                 onChange={(e) =>
                                     setShippingAddress({
                                         ...shippingAddress,
-                                        eircode: e.target.value,
+                                        postalCode: e.target.value,
                                     })
                                 }
                                 className="w-full p-2 border rounded"
