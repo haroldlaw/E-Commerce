@@ -6,15 +6,15 @@ const Filter = () => {
   const navigate = useNavigate()
 
   const [filters, setFilters] = useState({
-    category: "",
+    collection: "",
     brand: [],
     minPrice: 0,
-    maxPrice: 50000,
+    maxPrice: 6000,
   });
 
-  const [priceRange, setPriceRange] = useState([0, 50000]);
+  const [priceRange, setPriceRange] = useState([0, 6000]);
 
-  const categories = ["Digital", "Film", "Lens"];
+  const collections = ["Digital", "Film", "Lens"];
 
   const brands = ["Sony", "Nikon", "Canon", "Fujifilm", "Leica", "Ricoh"];
 
@@ -22,12 +22,12 @@ const Filter = () => {
     const params = Object.fromEntries([...searchParams])
 
     setFilters({
-      category: params.category || "",
+      collection: params.collection || "",
       brand: params.brand ? params.brand.split(",") : [],
       minPrice: params.minPrice || 0,
-      maxPrice: params.maxPrice || 50000
+      maxPrice: params.maxPrice || 6000
     })
-    setPriceRange([0, params.maxPrice || 50000]);
+    setPriceRange([0, params.maxPrice || 6000]);
   }, [searchParams])
 
   const handleFilterChange = (e) => {
@@ -47,6 +47,14 @@ const Filter = () => {
     updateURLParams(newFilters)
   }
 
+  const handlePriceChange = (e) => {
+    const newPrice = e.target.value;
+    setPriceRange([0, newPrice]);
+    const newFilters = { ...filters, minPrice: 0, maxPrice: newPrice };
+    setFilters(newFilters);
+    updateURLParams(newFilters);
+  }
+
   const updateURLParams = (newFilters) => {
     const params = new URLSearchParams();
     Object.keys(newFilters).forEach((key) => {
@@ -60,31 +68,23 @@ const Filter = () => {
     navigate(`?${params.toString()}`);
   }
 
-  const handlePriceChange = (e) => {
-    const newPrice = e.target.value;
-    setPriceRange([0, newPrice]);
-    const newFilters = { ...filters, minPrice: 0, maxPrice: newPrice };
-    setFilters(filters);
-    updateURLParams(newFilters);
-  }
-
   return (
     <div className='p-4'>
       <h3 className='text-xl font-medium text-gray-800 mb-4'>Filter</h3>
-      {/* Category Filter */}
+      {/* Collection Filter */}
       <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">Category</label>
-        {categories.map((category) => (
-          <div key={category} className="flex items-center mb-1">
+        <label className="block text-gray-600 font-medium mb-2">Collection</label>
+        {collections.map((collection) => (
+          <div key={collection} className="flex items-center mb-1">
             <input
               type="radio"
-              name="category"
-              value={category}
-              checked={filters.category === category}
+              name="collection"
+              value={collection}
+              checked={filters.collection === collection}
               onChange={handleFilterChange}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
-            <span className="text-gray-700">{category}</span>
+            <span className="text-gray-700">{collection}</span>
           </div>
         ))}
       </div>
@@ -114,7 +114,7 @@ const Filter = () => {
           type="range"
           name="priceRange"
           min={0}
-          max={50000}
+          max={6000}
           value={priceRange[1]}
           onChange={handlePriceChange}
           className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"

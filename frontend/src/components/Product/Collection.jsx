@@ -20,7 +20,7 @@ const Collection = () => {
                             Digital Camera
                         </h2>
                         <Link
-                            to="/products/all?collection=Digital camera"
+                            to="/products/all?collection=Digital"
                             className="text-gray-900 underline"
                         >
                             Shop
@@ -39,7 +39,7 @@ const Collection = () => {
                             Film Camera
                         </h2>
                         <Link
-                            to="/products/all?collection=Film camera"
+                            to="/products/all?collection=Film"
                             className="text-gray-900 underline"
                         >
                             Shop

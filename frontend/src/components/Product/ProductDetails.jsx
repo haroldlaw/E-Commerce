@@ -133,7 +133,7 @@ const ProductDetails = ({ productId }) => {
                                     ? "cursor-not-allowed opacity-50"
                                     : "hover:bg-gray-900"
                                     }`}>
-                                ADD TO CART
+                                Add to Cart
                             </button>
                         </div>
                     </div>

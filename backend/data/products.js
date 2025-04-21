@@ -8,7 +8,7 @@ const products = [
         countInStock: 10,
         sku: "OX-SH-001",
         brand: "Sony",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/sony-a6700.webp",
@@ -27,7 +27,7 @@ const products = [
         countInStock: 5,
         sku: "OX-SH-002",
         brand: "Sony",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/sony-a7c-ii.webp",
@@ -46,7 +46,7 @@ const products = [
         countInStock: 10,
         sku: "OX-SH-003",
         brand: "Sony",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/sony-a6400.webp",
@@ -122,7 +122,7 @@ const products = [
         countInStock: 3,
         sku: "OX-SH-007",
         brand: "Fujifilm",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/fujifilm-xs20.webp",
@@ -141,7 +141,7 @@ const products = [
         countInStock: 2,
         sku: "OX-SH-008",
         brand: "Fujifilm",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/fujifilm-x100vi.webp",
@@ -160,7 +160,7 @@ const products = [
         countInStock: 1,
         sku: "OX-SH-009",
         brand: "Pentax",
-        collection: "Film camera",
+        collection: "Film",
         images: [
             {
                 url: "/uploads/pentax17.webp",
@@ -179,7 +179,7 @@ const products = [
         countInStock: 6,
         sku: "OX-SH-010",
         brand: "Panasonic",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/panasonic-lumix-dc-tz99.webp",
@@ -198,7 +198,7 @@ const products = [
         countInStock: 1,
         sku: "OX-SH-011",
         brand: "Nikon",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/nikon-z6-iii.webp",
@@ -217,7 +217,7 @@ const products = [
         countInStock: 2,
         sku: "OX-SH-012",
         brand: "Nikon",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/nikon-zf.webp",
@@ -274,7 +274,7 @@ const products = [
         countInStock: 6,
         sku: "OX-SH-015",
         brand: "Ricoh",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/ricoh-gr-iii-hdf.webp",
@@ -293,7 +293,7 @@ const products = [
         countInStock: 6,
         sku: "OX-SH-016",
         brand: "Canon",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/canon-eos-r7.webp",
@@ -312,7 +312,7 @@ const products = [
         countInStock: 5,
         sku: "OX-SH-017",
         brand: "Canon",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/canon-powershot-g7x-mark-iii.webp",
@@ -331,7 +331,7 @@ const products = [
         countInStock: 3,
         sku: "OX-SH-018",
         brand: "Fujifilm",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/fujifilm_xt5.webp",
@@ -350,7 +350,7 @@ const products = [
         countInStock: 3,
         sku: "OX-SH-019",
         brand: "Fujifilm",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/fujifilm-gfx-100rf.webp",
@@ -369,7 +369,7 @@ const products = [
         countInStock: 5,
         sku: "OX-SH-020",
         brand: "Panasonic",
-        collection: "Digital camera",
+        collection: "Digital",
         images: [
             {
                 url: "/uploads/panasonic-lumix-dc-s5-iix.webp",

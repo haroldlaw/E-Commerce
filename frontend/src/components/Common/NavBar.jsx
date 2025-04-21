@@ -26,10 +26,10 @@ const NavBar = () => {
                     </Link>
                 </div>
                 <div className='hidden md:flex space-x-6'>
-                    <Link to="/products/all?collection=Digital camera" className='text-700 hover:text-black text-md font-medium'>
+                    <Link to="/products/all?collection=Digital" className='text-700 hover:text-black text-md font-medium'>
                         Digital Camera
                     </Link>
-                    <Link to="/products/all?collection=Film camera" className='text-700 hover:text-black text-md font-medium'>
+                    <Link to="/products/all?collection=Film" className='text-700 hover:text-black text-md font-medium'>
                         Film Camera
                     </Link>
                     <Link to="/products/all?collection=Lens" className='text-700 hover:text-black text-md font-medium'>
