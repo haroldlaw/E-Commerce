@@ -103,7 +103,7 @@ const productSlice = createSlice({
                 state.loading = false;
                 state.error - action.error.message;
             })
-            //  Handle fetching single product details
+            // handle fetching single product details
             .addCase(fetchProductDetails.pending, (state) => {
                 state.loading = true;
                 state.error = null;
@@ -116,7 +116,7 @@ const productSlice = createSlice({
                 state.loading = false;
                 state.error = action.error.message;
             })
-            //   handle updating product
+            // handle updating product
             .addCase(updateProduct.pending, (state) => {
                 state.loading = true;
                 state.error = null;
