@@ -78,7 +78,7 @@ const products = [
     {
         name: "Sigma 24-70mm F/2.8 DG DN ART Sony FE",
         description:
-            "The Sigma 24-70mm F2.8 DG DN (A) is a versatile wide-angle to short telephoto zoom lens. The lens features an F/2.8 constant maximum aperture and is a true workhorse for Sony's full-frame E-mount system cameras",
+            "The Sigma 24-70mm F2.8 DG DN (A) is a versatile wide-angle to short telephoto zoom lens. The lens features an F/2.8 constant maximum aperture and is a true workhorse for Sony's full-frame E-mount system cameras.",
         price: 1100,
         discountPrice: 1000,
         countInStock: 9,

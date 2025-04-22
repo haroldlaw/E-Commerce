@@ -34,8 +34,10 @@ const Product = () => {
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside)
-        document.removeEventListener("mousedown", handleClickOutside)
-    })
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+    }, [])
 
     return (
         <div className='flex flex-col lg:flex-row'>
@@ -54,7 +56,7 @@ const Product = () => {
             </div>
             <div className='flex-grow p-4'>
                 <h2 className='text-2xl uppercase mb-4'>All Products</h2>
-                {/* Sort Options */}
+                {/* Sort Option */}
                 <Sort />
 
                 {/* Product Grid */}

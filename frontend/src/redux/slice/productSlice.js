@@ -10,8 +10,7 @@ export const fetchProductByFilter = createAsyncThunk(
         maxPrice,
         sortBy,
         search,
-        brand,
-        limit,
+        brand
     }) => {
         const query = new URLSearchParams();
         if (collection) query.append("collection", collection);
@@ -20,7 +19,6 @@ export const fetchProductByFilter = createAsyncThunk(
         if (sortBy) query.append("sortBy", sortBy);
         if (search) query.append("search", search);
         if (brand) query.append("brand", brand);
-        if (limit) query.append("limit", limit);
 
         const response = await axios.get(
             `${import.meta.env.VITE_BACKEND_URL}/api/product?${query.toString()}`
@@ -138,5 +136,5 @@ const productSlice = createSlice({
     }
 })
 
-export const { setFilter, clearFilter } = productSlice.actions;
+export const { setFilters, clearFilters } = productSlice.actions;
 export default productSlice.reducer;

@@ -4,12 +4,13 @@ import { useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProductDetails } from '../../redux/slice/productSlice'
+import { addToCart } from "../../redux/slice/cartSlice"
 
 const ProductDetails = ({ productId }) => {
     const { id } = useParams()
     const dispatch = useDispatch()
     const { selectedProduct, loading, error } = useSelector((state) => state.products)
-    const { userId, guestId } = useSelector((state) => state.auth)
+    const { user, guestId } = useSelector((state) => state.auth)
     const [mainImage, setMainImage] = useState("")
     const [quantity, setQuantity] = useState(1)
     const [isButtonDisabled, setIsButtonDisabled] = useState(false)
@@ -73,7 +74,7 @@ const ProductDetails = ({ productId }) => {
                             {selectedProduct.images.map((image, index) => (
                                 <img
                                     key={index}
-                                    src={image.url}
+                                    src={`http://localhost:9000${image.url}`}
                                     alt={image.altText || `Thumbnail ${index}`}
                                     className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${mainImage === image.url ? "border-black" : "border-gray-300"
                                         }`}
@@ -83,7 +84,7 @@ const ProductDetails = ({ productId }) => {
                         </div>
                         <div className='md:w-1/2'>
                             <div className='mb-4'>
-                                <img src={mainImage} alt="Main Product"
+                                <img src={`http://localhost:9000${mainImage}`} alt="Main Product"
                                     className='w-full h-auto object-cover rounded-lg' />
                             </div>
                         </div>
@@ -91,7 +92,7 @@ const ProductDetails = ({ productId }) => {
                             {selectedProduct.images.map((image, index) => (
                                 <img
                                     key={index}
-                                    src={image.url}
+                                    src={`http://localhost:9000${image.url}`}
                                     alt={image.altText || `Thumbnail ${index}`}
                                     className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${mainImage === image.url ? "border-black" : "border-gray-300"
                                         }`}

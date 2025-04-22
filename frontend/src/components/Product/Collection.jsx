@@ -46,7 +46,7 @@ const Collection = () => {
                         </Link>
                     </div>
                 </div>
-                {/* Lenses Collection */}
+                {/* Lens Collection */}
                 <div className="relative flex-1">
                     <img
                         src={lensesCollectionImage}

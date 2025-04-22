@@ -4,10 +4,14 @@ import { HiOutlineUser, HiOutlineShoppingBag, HiBars3BottomRight } from 'react-i
 import Search from './Search'
 import CartDrawer from '../Layout/CartDrawer'
 import { IoMdClose } from "react-icons/io"
+import { useSelector } from "react-redux"
 
 const NavBar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+    const { cart } = useSelector((state) => state.cart);
+
+    const cartItemCount = cart?.products?.reduce((total, product) => total + product.quantity, 0) || 0;
 
     const toggleCartDrawer = () => {
         setDrawerOpen(!drawerOpen);
@@ -43,9 +47,11 @@ const NavBar = () => {
                     </Link>
                     <button onClick={toggleCartDrawer} className='relative hover:text-black'>
                         <HiOutlineShoppingBag className='h-6 w-6 text-700' />
-                        <span className='absolute -top-1 bg-black text-white text-xs rounded-full px-2 py-0.5'>
-                            1
-                        </span>
+                        {cartItemCount > 0 && (
+                            <span className='absolute -top-1 bg-black text-white text-xs rounded-full px-2 py-0.5'>
+                                {cartItemCount}
+                            </span>
+                        )}
                     </button>
                     <div className='overflow-hidden'>
                         <Search />
@@ -66,10 +72,10 @@ const NavBar = () => {
                 <div className='p-4'>
                     <h2 className="text-xl font-semibold mb-4">Menu</h2>
                     <nav className='space-y-4'>
-                        <Link to="/products/all?collection=Digital camera" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
+                        <Link to="/products/all?collection=Digital" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
                             Digital Camera
                         </Link>
-                        <Link to="/products/all?collection=Film camera" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
+                        <Link to="/products/all?collection=Film" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
                             Film Camera
                         </Link>
                         <Link to="/products/all?collection=Lens" onClick={toggleNavCartDrawer} className="block text-gray-600 hover:text-black">
