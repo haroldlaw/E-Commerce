@@ -1,6 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { fetchProductDetails, updateProduct, } from "../../redux/slice/productSlice";
+import axios from "axios";
+
 
 const EditProduct = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { id } = useParams();
+    const { selectedProduct, loading, error } = useSelector(
+        (state) => state.products
+    );
+
     const [productDetail, setProductDetail] = useState({
         name: "",
         description: "",
@@ -9,12 +21,22 @@ const EditProduct = () => {
         sku: "",
         brand: "",
         collection: "",
-        images: [{
-            url: "https://picsum.photos/150?random=1"
-        }, {
-            url: "https://picsum.photos/150?random=2"
-        }]
+        images: []
     })
+
+    const [uploading, setUploading] = useState(false);
+
+    useEffect(() => {
+        if (id) {
+            dispatch(fetchProductDetails(id));
+        }
+    }, [dispatch, id]);
+
+    useEffect(() => {
+        if (selectedProduct) {
+            setProductDetail(selectedProduct);
+        }
+    }, [selectedProduct]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,12 +45,35 @@ const EditProduct = () => {
 
     const handleImageUpload = async (e) => {
         const file = e.target.files[0];
-        console.log(file)
-    }
+        const formData = new FormData();
+        formData.append("image", file);
+        try {
+            setUploading(true);
+            const { data } = await axios.post(
+                `${import.meta.env.VITE_BACKEND_URL}/api/upload`,
+                formData,
+                {
+                    headers: { "Content-Type": "multipart/form-data" },
+                }
+            );
+            setProductDetail((prevData) => ({
+                ...prevData,
+                images: [...prevData.images, { url: data.imageUrl, altText: "" }],
+            }));
+            setUploading(false);
+        } catch (error) {
+            console.error(error);
+            setUploading(false);
+        }
+    };
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(file)
+        dispatch(updateProduct({ id, productDetail }));
+        navigate("/admin/product");
     }
 
     return (
@@ -105,7 +150,7 @@ const EditProduct = () => {
                         {productDetail.images.map((image, index) => (
                             <div key={index}>
                                 <img
-                                    src={image.url}
+                                    src={`http://localhost:9000${image.url}`}
                                     alt={image.altText || "Product Image"}
                                     className="w-20 h-20 object-cover rounded-md shadow-md"
                                 />

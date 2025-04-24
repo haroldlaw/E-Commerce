@@ -7,11 +7,18 @@ import {
     FaStore,
     FaUser,
 } from 'react-icons/fa'
+import { useDispatch } from "react-redux"
+import { logout } from "../../redux/slice/authSlice"
+import { clearCart } from "../../redux/slice/cartSlice"
 
 const Sidebar = () => {
     const navigate = useNavigate()
 
+    const dispatch = useDispatch();
+
     const handleLogout = () => {
+        dispatch(logout());
+        dispatch(clearCart());
         navigate("/");
     }
 

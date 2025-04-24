@@ -1,13 +1,33 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { registerUser } from '../redux/slice/authSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { mergeCart } from "../redux/slice/cartSlice"
 
 const Register = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const { user, guestId, loading } = useSelector((state) => state.auth)
+    const { cart } = useSelector((state) => state.cart)
+
+    const redirect = new URLSearchParams(location.search).get("redirect") || "/"
+    const isCheckoutRedirect = redirect.includes("checkout")
+
+    useEffect(() => {
+        if (user) {
+            if (cart?.products.length > 0 && guestId) {
+                dispatch(mergeCart({ guestId, user })).then(() => {
+                    navigate(isCheckoutRedirect ? "/checkout" : "/");
+                });
+            } else {
+                navigate(isCheckoutRedirect ? "/checkout" : "/");
+            }
+        }
+    }, [user, guestId, cart, navigate, isCheckoutRedirect, dispatch]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +42,7 @@ const Register = () => {
                         <h2 className="text-xl font-medium">ShootItWithFilm</h2>
                     </div>
                     <p className="text-center mb-6">
-                        Set up your name, email and password to sign up
+                        Enter your name, email and password to sign up
                     </p>
                     <div className="mb-4">
                         <label className="block text-sm font-semibold mb-2">Name</label>
@@ -63,7 +83,7 @@ const Register = () => {
                     <p className="mt-6 text-center text-sm">
                         Already have an account?{" "}
                         <Link
-                            to="/login"
+                            to={`/login?redirect=${encodeURIComponent(redirect)}`}
                             className="text-blue-500"
                         >
                             Login

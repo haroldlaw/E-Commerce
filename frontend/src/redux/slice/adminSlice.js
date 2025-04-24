@@ -88,7 +88,7 @@ const adminSlice = createSlice({
                 const updatedUser = action.payload;
 
                 const userIndex = state.users.findIndex(
-                    (user) => user.id === updatedUser.id
+                    (user) => user._id === updatedUser._id
                 );
                 if (userIndex !== -1) {
                     state.users[userIndex] = updatedUser;

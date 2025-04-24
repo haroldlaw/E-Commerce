@@ -1,20 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import PayPal from './PayPal'
-
-const cart = {
-    products: [{
-        name: "Sony Alpha A7C II",
-        price: 1900,
-        image: "https://www.mpb.com/media-service/59f7d773-5909-4ffa-9420-7565d4d57ba8"
-    }
-    ],
-    totalPrice: 1900
-}
+import { useDispatch, useSelector } from 'react-redux'
+import { createCheckout } from "../../redux/slice/checkoutSlice"
+import axios from "axios"
 
 const Checkout = () => {
-
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { cart, loading, error } = useSelector((state) => state.cart)
+    const { user } = useSelector((state) => state.auth)
 
     const [checkoutId, setCheckoutId] = useState(null)
 
@@ -28,14 +23,74 @@ const Checkout = () => {
         phone: "",
     })
 
+    useEffect(() => {
+        if (!cart || !cart.products || cart.products.length === 0) {
+            navigate("/");
+        }
+    }, [cart, navigate])
+
     const handleCreateCheckout = async (e) => {
         e.preventDefault();
-        setCheckoutId(123)
+        if (cart && cart.products.length > 0) {
+            const res = await dispatch(
+                createCheckout({
+                    checkoutItems: cart.products,
+                    shippingAddress: {
+                        street: shippingAddress.street,
+                        city: shippingAddress.city,
+                        postalCode: shippingAddress.postalCode,
+                        country: shippingAddress.country,
+                    },
+                    paymentMethod: "Paypal",
+                    totalPrice: cart.totalPrice,
+                })
+            );
+            if (res.payload && res.payload._id) {
+                setCheckoutId(res.payload._id); // Set checkout id if chekout was successful
+            }
+        }
     }
 
     const handlePaymentSuccess = async (details) => {
-        console.log("Payment successful", details)
-        navigate("/orderConfirmation")
+        try {
+            const response = await axios.put(
+                `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
+                { paymentStatus: "paid", paymentDetails: details },
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+                    },
+                }
+            );
+
+            await handleFinalizeCheckout(checkoutId); // Finalize checkout if payment is successful
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const handleFinalizeCheckout = async (checkoutId) => {
+        try {
+            await axios.post(
+                `${import.meta.env.VITE_BACKEND_URL
+                }/api/checkout/${checkoutId}/finalize`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+                    },
+                }
+            );
+            navigate("/orderConfirmation");
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    if (loading) return <p>Loading ...</p>;
+    if (error) return <p>Error: {error}</p>;
+    if (!cart || !cart.products || cart.products.length === 0) {
+        return <p>Your cart is empty</p>;
     }
 
     return (
@@ -50,7 +105,7 @@ const Checkout = () => {
                         <label className="block text-gray-700">Email</label>
                         <input
                             type="email"
-                            value="user@example.com"
+                            value={user ? user.email : ""}
                             className="w-full p-2 border rounded"
                             disabled
                         />
@@ -175,7 +230,7 @@ const Checkout = () => {
                             </button>
                         ) : (
                             <div>
-                                <PayPal amount={1000} onSuccess={handlePaymentSuccess} onError={(err) => alert("Payment failed. Please try again.")} />
+                                <PayPal amount={cart.totalPrice} onSuccess={handlePaymentSuccess} onError={(err) => alert("Payment failed. Please try again.")} />
                             </div>
                         )}
                     </div>
@@ -191,7 +246,7 @@ const Checkout = () => {
                         >
                             <div className="flex items-start">
                                 <img
-                                    src={product.image}
+                                    src={`http://localhost:9000${product.image}`}
                                     alt={product.name}
                                     className="w-20 h-24 object-cover mr-4"
                                 />

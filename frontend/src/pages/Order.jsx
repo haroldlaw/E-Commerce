@@ -1,30 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux"
+import { fetchUserOrders } from "../redux/slice/orderSlice"
 
 const Order = () => {
-    const [orders, setOrders] = useState([])
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { orders, loading, error } = useSelector((state) => state.orders)
 
     useEffect(() => {
-        setTimeout(() => {
-            const mockOrder = [{
-                id: "001",
-                createdAt: new Date(),
-                shippingAddress: { street:"52 Lios An Uisce", city: "Galway", country: "Ireland" },
-                items: [{
-                    name: "Fujifilm X100V",
-                    image: "https://www.mpb.com/media-service/1606dcec-3cf0-4ff3-a27e-d6742931e8b0"
-                }],
-                price: 1500,
-                isPaid: true
-            }]
-            setOrders(mockOrder)
-        })
-    }, 1000)
+        dispatch(fetchUserOrders());
+    }, [dispatch]);
 
     const handleRowClick = (orderId) => {
         navigate(`/order/${orderId}`)
     }
+
+    if (loading) return <p>Loading ...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     return (
         <div className='max-w-7xl mx-auto p-4 sm:p-6'>
@@ -48,16 +41,16 @@ const Order = () => {
                         {orders.length > 0 ? (
                             orders.map((order) => (
                                 <tr
-                                    key={order.id}
-                                    onClick={() => handleRowClick(order.id)}
+                                    key={order._id}
+                                    onClick={() => handleRowClick(order._id)}
                                     className="border-b hover:border-gray-50 cursor-pointer"
                                 >
                                     <td className="py-2 px-2 sm:py-4 sm:px-4">
-                                        <img src={order.items[0].image} alt={order.items[0].name}
+                                        <img src={`http://localhost:9000${order.orderItems[0].image}`} alt={order.orderItems[0].name}
                                             className='w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-lg' />
                                     </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4 font-medium text-gray-900 whitespace-nowrap">
-                                        {order.id}
+                                        {order._id}
                                     </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4 font-medium text-gray-900">
                                         {new Date(order.createdAt).toLocaleDateString()}{" "}
@@ -65,14 +58,14 @@ const Order = () => {
                                     </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4 font-medium text-gray-900">
                                         {order.shippingAddress
-                                            ? `${order.shippingAddress.street}, ${order.shippingAddress.city}, ${order.shippingAddress.country}`
+                                            ? `${order.shippingAddress.street}, ${order.shippingAddress.city}, ${order.shippingAddress.postalCode}, ${order.shippingAddress.country}`
                                             : "N/A"}
                                     </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4 font-medium text-gray-900 whitespace-nowrap">
-                                        {order.items.length}
+                                        {order.orderItems.length}
                                     </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4 font-medium text-gray-900 whitespace-nowrap">
-                                        ${order.price}
+                                        ${order.totalPrice}
                                     </td>
                                     <td className="py-2 px-2 sm:py-4 sm:px-4">
                                         <span

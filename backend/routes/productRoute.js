@@ -120,13 +120,12 @@ router.get("/", async (req, res) => {
             maxPrice,
             sortBy,
             search,
-            brand,
-            limit,
+            brand
         } = req.query
 
         let query = {}
 
-        //  Filter logic
+        // filter logic
         if (collection && collection.toLocaleLowerCase() !== "all") {
             query.collection = collection;
         }
@@ -148,7 +147,7 @@ router.get("/", async (req, res) => {
             ];
         }
 
-        // Sort Logic
+        // sort logic
         let sort = {};
         if (sortBy) {
             switch (sortBy) {
@@ -163,10 +162,9 @@ router.get("/", async (req, res) => {
             }
         }
 
-        // Fetch products and apply sorting and limit
+        // fetch products and apply sorting 
         let products = await Product.find(query)
             .sort(sort)
-            .limit(Number(limit) || 0);
         res.json(products);
     } catch (error) {
         console.error(error);

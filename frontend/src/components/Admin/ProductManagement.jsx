@@ -1,20 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { deleteProduct, fetchAdminProducts } from "../../redux/slice/adminProductSlice"
 
 const ProductManagement = () => {
+    const dispatch = useDispatch();
+    const { products, loading, error } = useSelector(
+        (state) => state.adminProducts
+    );
 
-    const products = [{
-        id: 100,
-        name: "Sony a6400",
-        price: 900,
-        sku: "123"
-    }]
+    useEffect(() => {
+        dispatch(fetchAdminProducts());
+    }, [dispatch]);
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this product?")) {
-            console.log(id)
+            dispatch(deleteProduct(id))
         }
     }
+
+    if (loading) return <p>Loading ...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     return (
         <div className='max-w-7xl mx-auto p-6'>
@@ -33,7 +40,7 @@ const ProductManagement = () => {
                         {products.length > 0 ? (
                             products.map((product) => (
                                 <tr
-                                    key={product.id}
+                                    key={product._id}
                                     className="border-b hover:bg-gray-50 cursor-pointer"
                                 >
                                     <td className="p-4 font-medium text-gray-900 whitespace-nowrap">
@@ -43,13 +50,13 @@ const ProductManagement = () => {
                                     <td className="p-4">{product.sku}</td>
                                     <td className="p-4">
                                         <Link
-                                            to={`/admin/product/${product.id}/edit`}
+                                            to={`/admin/product/${product._id}/edit`}
                                             className="bg-yellow-500 text-white px-2 py-1 rounded mr-2 hover:bg-yellow-600"
                                         >
                                             Edit
                                         </Link>
                                         <button
-                                            onClick={() => handleDelete(product.id)}
+                                            onClick={() => handleDelete(product._id)}
                                             className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
                                         >
                                             Delete

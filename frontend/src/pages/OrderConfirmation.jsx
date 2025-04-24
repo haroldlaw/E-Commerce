@@ -1,30 +1,30 @@
 import React from 'react'
-
-const checkout = {
-    id: "001",
-    createdAt: new Date(),
-    checkoutItems: [{
-        productId: 1,
-        name: "Fujifilm X100V",
-        quantity: 1,
-        price: 1500,
-        image: "${order.shippingAddress.city},"
-    }],
-    shippingAddress: {
-        street: "52 Lios An Uisce",
-        city: "Galway",
-        country: "Ireland"
-    }
-}
+import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { clearCart } from "../redux/slice/cartSlice"
+import { useEffect } from "react"
 
 const OrderConfirmation = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { checkout } = useSelector((state) => state.checkout);
+
+    // Clear the cart when the order is confirmed
+    useEffect(() => {
+        if (checkout && checkout._id) {
+            dispatch(clearCart());
+            localStorage.removeItem("cart");
+        } else {
+            navigate("/my-orders");
+        }
+    }, [checkout, dispatch, navigate]);
 
     const calculateEstimatedDelivery = (createdAt) => {
         const orderDate = new Date(createdAt);
         orderDate.setDate(orderDate.getDate() + 10); // Add 10 days to the order date
         return orderDate.toLocaleDateString();
     }
-    
+
     return (
         <div className='max-w-4xl mx-auto p-6 bg-white'>
             <h1 className="text-4xl font-bold text-center text-emerald-700 mb-8">
@@ -36,7 +36,7 @@ const OrderConfirmation = () => {
                         {/* Order Id and Date */}
                         <div>
                             <h2 className="text-xl font-semibold">
-                                Order ID: {checkout.id}
+                                Order ID: {checkout._id}
                             </h2>
                             <p className="text-gray-500">
                                 Order date: {new Date(checkout.createdAt).toLocaleDateString()}
@@ -55,7 +55,7 @@ const OrderConfirmation = () => {
                         {checkout.checkoutItems.map((item) => (
                             <div key={item.productId} className="flex items-center mb-4">
                                 <img
-                                    src={item.image}
+                                    src={`http://localhost:9000${item.image}`}
                                     alt={item.name}
                                     className="w-16 h-16 object-cover rounded-md mr-4"
                                 />
@@ -81,8 +81,11 @@ const OrderConfirmation = () => {
                         <div>
                             <h4 className="text-lg font-semibold mb-2">Delivery</h4>
                             <p className="text-gray-600">
-                                {checkout.shippingAddress.street},{" "}
+                                {checkout.shippingAddress.street}
+                            </p>
+                            <p className="text-gray-600">
                                 {checkout.shippingAddress.city},{" "}
+                                {checkout.shippingAddress.postalCode},{" "}
                                 {checkout.shippingAddress.country}
                             </p>
                         </div>

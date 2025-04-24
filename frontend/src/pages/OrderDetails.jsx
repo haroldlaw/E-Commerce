@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux"
+import { fetchOrderDetails } from "../redux/slice/orderSlice"
 
 const OrderDetails = () => {
-    const { id } = useParams()
+    const { id } = useParams();
+    const dispatch = useDispatch();
+  const { orderDetails, loading, error } = useSelector((state) => state.orders);
 
-    const [orderDetails, setOrderDetails] = useState(null)
+  useEffect(() => {
+    dispatch(fetchOrderDetails(id));
+  }, [dispatch, id]);
 
-    useEffect(() => {
-        const mockOrderDetails = {
-            id: id,
-            createdAt: new Date(),
-            isPaid: true,
-            isDelivered: false,
-            paymentMethod: "PayPal",
-            shippingAddress: { street: "52 Lios An Uisce", city: "Galway", country: "Ireland" },
-            orderItems: [{
-                productId: 1,
-                name: "Fujifilm X100V",
-                quantity: 2,
-                price: 1500,
-            }]
-        }
-        setOrderDetails(mockOrderDetails)
-    }, [id])
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
     return (
         <div className="max-w-7xl mx-auto p-4 sm:p-6">
@@ -35,7 +26,7 @@ const OrderDetails = () => {
                     <div className="flex flex-col sm:flex-row justify-between mb-8">
                         <div>
                             <h3 className="text-lg md:text-xl font-semibold">
-                                Order ID: {orderDetails.id}
+                                Order ID: #{orderDetails._id}
                             </h3>
                             <p className="text-600">
                                 {new Date(orderDetails.createdAt).toLocaleDateString()}
@@ -71,7 +62,7 @@ const OrderDetails = () => {
                             <h4 className="text-lg font-semibold mb-2">Shipping Info</h4>
                             <p>
                                 Address:{" "}
-                                {`${orderDetails.shippingAddress.street}, ${orderDetails.shippingAddress.city}, ${orderDetails.shippingAddress.country}`}
+                                {`${orderDetails.shippingAddress.street}, ${orderDetails.shippingAddress.city}, ${orderDetails.shippingAddress.postalCode}, ${orderDetails.shippingAddress.country}`}
                             </p>
                         </div>
                     </div>
