@@ -20,10 +20,10 @@ export const fetchAdminProducts = createAsyncThunk(
 // async function to create a new product
 export const createProduct = createAsyncThunk(
     "adminProducts/createProduct",
-    async (productData) => {
+    async (productDetail) => {
         const response = await axios.post(
             `${API_URL}/api/admin/products`,
-            productData,
+            productDetail,
             {
                 headers: {
                     Authorization: USER_TOKEN,
@@ -37,10 +37,10 @@ export const createProduct = createAsyncThunk(
 // async thunk to update an existing product
 export const updateProduct = createAsyncThunk(
     "adminProducts/updateProduct",
-    async ({ id, productData }) => {
+    async ({ id, productDetail }) => {
         const response = await axios.put(
             `${API_URL}/api/admin/products/${id}`,
-            productData,
+            productDetail,
             {
                 headers: {
                     Authorization: USER_TOKEN,
@@ -90,7 +90,7 @@ const adminProductSlice = createSlice({
             // Update Product
             .addCase(updateProduct.fulfilled, (state, action) => {
                 const index = state.products.findIndex(
-                    (product) => product.id === action.payload.id
+                    (product) => product._id === action.payload.id
                 );
                 if (index !== -1) {
                     state.products[index] = action.payload;
